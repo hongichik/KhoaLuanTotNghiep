@@ -1,0 +1,337 @@
+2023/04/06 16:32:44 [warn] 34#34: *6566 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000007, client: 172.18.0.1, server: be_domain.com, request: "POST /api/register HTTP/1.1", host: "be_domain.com"
+2023/04/06 18:29:26 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/04/06 18:29:26 [notice] 29#29: gracefully shutting down
+2023/04/06 18:29:26 [notice] 33#33: gracefully shutting down
+2023/04/06 18:29:26 [notice] 29#29: exiting
+2023/04/06 18:29:26 [notice] 33#33: exiting
+2023/04/06 18:29:26 [notice] 31#31: gracefully shutting down
+2023/04/06 18:29:26 [notice] 31#31: exiting
+2023/04/06 18:29:26 [notice] 33#33: exit
+2023/04/06 18:29:26 [notice] 31#31: exit
+2023/04/06 18:29:26 [notice] 34#34: gracefully shutting down
+2023/04/06 18:29:26 [notice] 34#34: exiting
+2023/04/06 18:29:26 [notice] 29#29: exit
+2023/04/06 18:29:26 [notice] 34#34: exit
+2023/04/06 18:29:26 [notice] 32#32: gracefully shutting down
+2023/04/06 18:29:26 [notice] 32#32: exiting
+2023/04/06 18:29:26 [notice] 30#30: gracefully shutting down
+2023/04/06 18:29:26 [notice] 30#30: exiting
+2023/04/06 18:29:26 [notice] 30#30: exit
+2023/04/06 18:29:26 [notice] 32#32: exit
+2023/04/06 18:29:26 [notice] 36#36: gracefully shutting down
+2023/04/06 18:29:26 [notice] 36#36: exiting
+2023/04/06 18:29:26 [notice] 35#35: gracefully shutting down
+2023/04/06 18:29:26 [notice] 35#35: exiting
+2023/04/06 18:29:26 [notice] 36#36: exit
+2023/04/06 18:29:26 [notice] 35#35: exit
+2023/04/06 18:29:26 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2023/04/06 18:29:26 [notice] 1#1: worker process 33 exited with code 0
+2023/04/06 18:29:26 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/06 18:29:26 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2023/04/06 18:29:26 [notice] 1#1: worker process 31 exited with code 0
+2023/04/06 18:29:26 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/06 18:29:26 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2023/04/06 18:29:26 [notice] 1#1: worker process 29 exited with code 0
+2023/04/06 18:29:26 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/06 18:29:26 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2023/04/06 18:29:26 [notice] 1#1: worker process 30 exited with code 0
+2023/04/06 18:29:26 [notice] 1#1: worker process 32 exited with code 0
+2023/04/06 18:29:26 [notice] 1#1: worker process 34 exited with code 0
+2023/04/06 18:29:26 [notice] 1#1: worker process 36 exited with code 0
+2023/04/06 18:29:26 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/06 18:29:26 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2023/04/06 18:29:26 [notice] 1#1: worker process 35 exited with code 0
+2023/04/06 18:29:26 [notice] 1#1: exit
+2023/04/07 04:32:06 [notice] 1#1: using the "epoll" event method
+2023/04/07 04:32:06 [notice] 1#1: nginx/1.22.1
+2023/04/07 04:32:06 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+2023/04/07 04:32:06 [notice] 1#1: OS: Linux 5.15.0-56-generic
+2023/04/07 04:32:06 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/04/07 04:32:06 [notice] 1#1: start worker processes
+2023/04/07 04:32:06 [notice] 1#1: start worker process 29
+2023/04/07 04:32:06 [notice] 1#1: start worker process 30
+2023/04/07 04:32:06 [notice] 1#1: start worker process 31
+2023/04/07 04:32:06 [notice] 1#1: start worker process 32
+2023/04/07 04:32:06 [notice] 1#1: start worker process 33
+2023/04/07 04:32:06 [notice] 1#1: start worker process 34
+2023/04/07 04:32:06 [notice] 1#1: start worker process 35
+2023/04/07 04:32:06 [notice] 1#1: start worker process 36
+2023/04/07 06:26:23 [warn] 30#30: *427 an upstream response is buffered to a temporary file /var/cache/nginx/fastcgi_temp/1/00/0000000001 while reading upstream, client: 172.18.0.1, server: be_domain.com, request: "POST /api/login HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "be_domain.com"
+2023/04/07 06:29:22 [warn] 31#31: *439 an upstream response is buffered to a temporary file /var/cache/nginx/fastcgi_temp/2/00/0000000002 while reading upstream, client: 172.18.0.1, server: be_domain.com, request: "POST /api/login HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "be_domain.com"
+2023/04/07 06:52:43 [warn] 35#35: *511 an upstream response is buffered to a temporary file /var/cache/nginx/fastcgi_temp/3/00/0000000003 while reading upstream, client: 172.18.0.1, server: be_domain.com, request: "POST /api/login HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "be_domain.com"
+2023/04/07 07:14:01 [warn] 29#29: *571 an upstream response is buffered to a temporary file /var/cache/nginx/fastcgi_temp/4/00/0000000004 while reading upstream, client: 172.18.0.1, server: be_domain.com, request: "POST /api/checkUser HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "be_domain.com"
+2023/04/07 07:59:22 [error] 31#31: *1057 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 07:59:27 [error] 31#31: *1059 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 07:59:33 [error] 31#31: *1061 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 07:59:39 [error] 31#31: *1064 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 07:59:45 [error] 31#31: *1066 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 07:59:51 [error] 31#31: *1068 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:00:55 [error] 31#31: *1103 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:01:00 [error] 31#31: *1107 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:01:06 [error] 31#31: *1110 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:01:12 [error] 31#31: *1112 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:01:18 [error] 32#32: *1116 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:01:24 [error] 32#32: *1120 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:01:30 [error] 32#32: *1122 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:01:36 [error] 32#32: *1124 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:01:42 [error] 32#32: *1127 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:01:48 [error] 32#32: *1130 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:01:54 [error] 32#32: *1132 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:13:38 [error] 35#35: *1429 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:13:43 [error] 35#35: *1431 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:13:48 [error] 35#35: *1433 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:13:53 [error] 35#35: *1435 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:13:59 [error] 35#35: *1437 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:14:05 [error] 35#35: *1440 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:14:11 [error] 35#35: *1443 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:14:18 [error] 35#35: *1445 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:14:23 [error] 35#35: *1447 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:14:29 [error] 35#35: *1449 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:14:35 [error] 36#36: *1451 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:14:41 [error] 36#36: *1453 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:14:48 [error] 36#36: *1457 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:14:54 [error] 36#36: *1459 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:15:00 [error] 36#36: *1462 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:15:06 [error] 36#36: *1464 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:15:12 [error] 36#36: *1466 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:15:18 [error] 36#36: *1468 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:15:24 [error] 36#36: *1471 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:15:30 [error] 36#36: *1475 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:15:36 [error] 36#36: *1477 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:15:42 [error] 36#36: *1480 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:15:47 [error] 36#36: *1482 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:15:53 [error] 36#36: *1484 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:15:59 [error] 36#36: *1486 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:16:05 [error] 36#36: *1489 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:16:12 [error] 29#29: *1491 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:16:18 [error] 29#29: *1494 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:16:25 [error] 29#29: *1496 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:16:31 [error] 29#29: *1498 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:16:38 [error] 29#29: *1500 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:16:52 [error] 29#29: *1503 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:16:53 [error] 29#29: *1505 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:16:58 [error] 29#29: *1507 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:16:59 [error] 29#29: *1509 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:17:04 [error] 29#29: *1511 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:17:05 [error] 29#29: *1513 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:17:11 [error] 29#29: *1515 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:17:11 [error] 29#29: *1517 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:17:17 [error] 29#29: *1519 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:17:17 [error] 29#29: *1521 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:17:23 [error] 29#29: *1523 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:17:23 [error] 30#30: *1525 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:17:29 [error] 30#30: *1527 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:17:37 [error] 30#30: *1529 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:17:42 [error] 30#30: *1531 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:17:47 [error] 30#30: *1533 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:17:53 [error] 30#30: *1535 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:17:59 [error] 30#30: *1537 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /about HTTP/1.1", upstream: "http://172.18.0.3:3000/about", host: "fe_domain.com", referrer: "http://fe_domain.com/about"
+2023/04/07 08:17:59 [error] 30#30: *1540 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:17:59 [error] 30#30: *1537 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /favicon.ico HTTP/1.1", upstream: "http://172.18.0.3:3000/favicon.ico", host: "fe_domain.com", referrer: "http://fe_domain.com/about"
+2023/04/07 08:18:00 [error] 30#30: *1543 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:18:01 [error] 30#30: *1545 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:18:01 [error] 30#30: *1537 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /about HTTP/1.1", upstream: "http://172.18.0.3:3000/about", host: "fe_domain.com", referrer: "http://fe_domain.com/about"
+2023/04/07 08:18:01 [error] 30#30: *1537 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /favicon.ico HTTP/1.1", upstream: "http://172.18.0.3:3000/favicon.ico", host: "fe_domain.com", referrer: "http://fe_domain.com/about"
+2023/04/07 08:18:01 [error] 30#30: *1537 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /about HTTP/1.1", upstream: "http://172.18.0.3:3000/about", host: "fe_domain.com", referrer: "http://fe_domain.com/about"
+2023/04/07 08:18:01 [error] 30#30: *1537 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /favicon.ico HTTP/1.1", upstream: "http://172.18.0.3:3000/favicon.ico", host: "fe_domain.com", referrer: "http://fe_domain.com/about"
+2023/04/07 08:18:01 [error] 30#30: *1551 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:18:02 [error] 30#30: *1537 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /about HTTP/1.1", upstream: "http://172.18.0.3:3000/about", host: "fe_domain.com", referrer: "http://fe_domain.com/about"
+2023/04/07 08:18:02 [error] 30#30: *1537 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /favicon.ico HTTP/1.1", upstream: "http://172.18.0.3:3000/favicon.ico", host: "fe_domain.com", referrer: "http://fe_domain.com/about"
+2023/04/07 08:39:17 [error] 32#32: *1891 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:39:23 [error] 32#32: *1893 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:39:29 [error] 32#32: *1897 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:39:35 [error] 32#32: *1899 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:39:42 [error] 32#32: *1901 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:39:47 [error] 32#32: *1904 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:39:54 [error] 32#32: *1906 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:40:00 [error] 32#32: *1908 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:40:06 [error] 32#32: *1911 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:40:12 [error] 33#33: *1913 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:40:18 [error] 33#33: *1915 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:40:24 [error] 33#33: *1919 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:40:30 [error] 33#33: *1922 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:40:36 [error] 33#33: *1924 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:40:43 [error] 33#33: *1927 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:40:51 [error] 33#33: *1929 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:40:58 [error] 33#33: *1931 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:41:05 [error] 33#33: *1934 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:41:12 [error] 33#33: *1936 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:41:26 [error] 33#33: *1938 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:41:27 [error] 33#33: *1940 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:41:32 [error] 33#33: *1942 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:41:33 [error] 33#33: *1944 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:41:39 [error] 33#33: *1947 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:41:39 [error] 33#33: *1949 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:41:45 [error] 34#34: *1951 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:41:51 [error] 34#34: *1955 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:41:51 [error] 34#34: *1957 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:41:57 [error] 34#34: *1960 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:42:04 [error] 34#34: *1962 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:42:11 [error] 34#34: *1964 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:42:25 [error] 34#34: *1967 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:42:27 [error] 34#34: *1969 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:42:34 [error] 34#34: *1971 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:42:34 [error] 34#34: *1973 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:42:51 [error] 34#34: *1977 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:42:56 [error] 34#34: *1979 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:43:07 [error] 34#34: *1983 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:43:13 [error] 34#34: *1985 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:43:14 [error] 34#34: *1987 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:43:15 [error] 34#34: *1989 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:43:19 [error] 35#35: *1992 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:43:19 [error] 35#35: *1994 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:43:19 [error] 35#35: *1996 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:43:22 [error] 35#35: *1998 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:43:22 [error] 35#35: *2000 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:43:23 [error] 35#35: *2002 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:43:31 [error] 35#35: *2004 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:43:38 [error] 35#35: *2006 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:43:52 [error] 35#35: *2008 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:44:00 [error] 35#35: *2010 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:44:16 [error] 35#35: *2013 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:44:17 [error] 35#35: *2015 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:44:19 [error] 35#35: *2017 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:44:19 [error] 35#35: *2019 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:44:19 [error] 35#35: *2021 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:44:20 [error] 35#35: *2023 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:44:20 [error] 36#36: *2025 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:44:21 [error] 36#36: *2027 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:44:21 [error] 36#36: *2029 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:44:21 [error] 36#36: *2031 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:44:22 [error] 36#36: *2033 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:44:29 [error] 36#36: *2035 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:44:32 [error] 36#36: *2037 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:44:35 [error] 36#36: *2039 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:44:44 [error] 36#36: *2041 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:44:47 [error] 36#36: *2043 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:44:50 [error] 36#36: *2045 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:45:01 [error] 36#36: *2050 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:45:03 [error] 36#36: *2052 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:45:03 [error] 36#36: *2054 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:45:08 [error] 36#36: *2058 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:45:08 [error] 36#36: *2060 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:45:08 [error] 29#29: *2062 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:45:08 [error] 29#29: *2064 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:45:09 [error] 29#29: *2066 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:45:10 [error] 29#29: *2068 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:45:10 [error] 29#29: *2070 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:45:11 [error] 29#29: *2072 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /about HTTP/1.1", upstream: "http://172.18.0.3:3000/about", host: "fe_domain.com", referrer: "http://fe_domain.com/about"
+2023/04/07 08:45:11 [error] 29#29: *2072 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /favicon.ico HTTP/1.1", upstream: "http://172.18.0.3:3000/favicon.ico", host: "fe_domain.com", referrer: "http://fe_domain.com/about"
+2023/04/07 08:45:11 [error] 29#29: *2076 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:45:11 [error] 29#29: *2078 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:45:11 [error] 29#29: *2080 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: fe_domain.com, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.3:3000/_next/webpack-hmr", host: "fe_domain.com"
+2023/04/07 08:51:55 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/04/07 08:51:55 [notice] 34#34: gracefully shutting down
+2023/04/07 08:51:55 [notice] 33#33: gracefully shutting down
+2023/04/07 08:51:55 [notice] 34#34: exiting
+2023/04/07 08:51:55 [notice] 33#33: exiting
+2023/04/07 08:51:55 [notice] 33#33: exit
+2023/04/07 08:51:55 [notice] 34#34: exit
+2023/04/07 08:51:55 [notice] 29#29: gracefully shutting down
+2023/04/07 08:51:55 [notice] 29#29: exiting
+2023/04/07 08:51:55 [notice] 29#29: exit
+2023/04/07 08:51:55 [notice] 35#35: gracefully shutting down
+2023/04/07 08:51:55 [notice] 35#35: exiting
+2023/04/07 08:51:55 [notice] 35#35: exit
+2023/04/07 08:51:55 [notice] 32#32: gracefully shutting down
+2023/04/07 08:51:55 [notice] 32#32: exiting
+2023/04/07 08:51:55 [notice] 32#32: exit
+2023/04/07 08:51:55 [notice] 36#36: gracefully shutting down
+2023/04/07 08:51:55 [notice] 36#36: exiting
+2023/04/07 08:51:55 [notice] 36#36: exit
+2023/04/07 08:51:55 [notice] 30#30: gracefully shutting down
+2023/04/07 08:51:55 [notice] 30#30: exiting
+2023/04/07 08:51:55 [notice] 30#30: exit
+2023/04/07 08:51:55 [notice] 31#31: gracefully shutting down
+2023/04/07 08:51:55 [notice] 31#31: exiting
+2023/04/07 08:51:55 [notice] 31#31: exit
+2023/04/07 08:51:55 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2023/04/07 08:51:55 [notice] 1#1: worker process 34 exited with code 0
+2023/04/07 08:51:55 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 08:51:55 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2023/04/07 08:51:55 [notice] 1#1: worker process 29 exited with code 0
+2023/04/07 08:51:55 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 08:51:55 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2023/04/07 08:51:55 [notice] 1#1: worker process 32 exited with code 0
+2023/04/07 08:51:55 [notice] 1#1: worker process 33 exited with code 0
+2023/04/07 08:51:55 [notice] 1#1: worker process 35 exited with code 0
+2023/04/07 08:51:55 [notice] 1#1: worker process 36 exited with code 0
+2023/04/07 08:51:55 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 08:51:55 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2023/04/07 08:51:55 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2023/04/07 08:51:55 [notice] 1#1: worker process 31 exited with code 0
+2023/04/07 08:51:55 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 08:51:55 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2023/04/07 08:51:55 [notice] 1#1: worker process 30 exited with code 0
+2023/04/07 08:51:55 [notice] 1#1: exit
+2023/04/07 11:48:18 [notice] 1#1: using the "epoll" event method
+2023/04/07 11:48:18 [notice] 1#1: nginx/1.22.1
+2023/04/07 11:48:18 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+2023/04/07 11:48:18 [notice] 1#1: OS: Linux 5.15.0-56-generic
+2023/04/07 11:48:18 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/04/07 11:48:18 [notice] 1#1: start worker processes
+2023/04/07 11:48:18 [notice] 1#1: start worker process 29
+2023/04/07 11:48:18 [notice] 1#1: start worker process 30
+2023/04/07 11:48:18 [notice] 1#1: start worker process 31
+2023/04/07 11:48:18 [notice] 1#1: start worker process 32
+2023/04/07 11:48:18 [notice] 1#1: start worker process 33
+2023/04/07 11:48:18 [notice] 1#1: start worker process 34
+2023/04/07 11:48:18 [notice] 1#1: start worker process 35
+2023/04/07 11:48:18 [notice] 1#1: start worker process 36
+2023/04/07 13:41:11 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/04/07 13:41:11 [notice] 31#31: gracefully shutting down
+2023/04/07 13:41:11 [notice] 30#30: gracefully shutting down
+2023/04/07 13:41:11 [notice] 31#31: exiting
+2023/04/07 13:41:11 [notice] 30#30: exiting
+2023/04/07 13:41:11 [notice] 30#30: exit
+2023/04/07 13:41:11 [notice] 31#31: exit
+2023/04/07 13:41:11 [notice] 33#33: gracefully shutting down
+2023/04/07 13:41:11 [notice] 29#29: gracefully shutting down
+2023/04/07 13:41:11 [notice] 33#33: exiting
+2023/04/07 13:41:11 [notice] 29#29: exiting
+2023/04/07 13:41:11 [notice] 29#29: exit
+2023/04/07 13:41:11 [notice] 33#33: exit
+2023/04/07 13:41:11 [notice] 34#34: gracefully shutting down
+2023/04/07 13:41:11 [notice] 32#32: gracefully shutting down
+2023/04/07 13:41:11 [notice] 32#32: exiting
+2023/04/07 13:41:11 [notice] 34#34: exiting
+2023/04/07 13:41:11 [notice] 34#34: exit
+2023/04/07 13:41:11 [notice] 32#32: exit
+2023/04/07 13:41:11 [notice] 35#35: gracefully shutting down
+2023/04/07 13:41:11 [notice] 35#35: exiting
+2023/04/07 13:41:11 [notice] 35#35: exit
+2023/04/07 13:41:11 [notice] 36#36: gracefully shutting down
+2023/04/07 13:41:11 [notice] 36#36: exiting
+2023/04/07 13:41:11 [notice] 36#36: exit
+2023/04/07 13:41:11 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2023/04/07 13:41:11 [notice] 1#1: worker process 29 exited with code 0
+2023/04/07 13:41:11 [notice] 1#1: worker process 30 exited with code 0
+2023/04/07 13:41:11 [notice] 1#1: worker process 34 exited with code 0
+2023/04/07 13:41:11 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 13:41:11 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2023/04/07 13:41:11 [notice] 1#1: worker process 36 exited with code 0
+2023/04/07 13:41:11 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 13:41:11 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2023/04/07 13:41:11 [notice] 1#1: worker process 35 exited with code 0
+2023/04/07 13:41:11 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 13:41:11 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2023/04/07 13:41:11 [notice] 1#1: worker process 31 exited with code 0
+2023/04/07 13:41:11 [notice] 1#1: worker process 32 exited with code 0
+2023/04/07 13:41:11 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 13:41:11 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2023/04/07 13:41:11 [notice] 1#1: worker process 33 exited with code 0
+2023/04/07 13:41:11 [notice] 1#1: exit
+2023/04/08 07:10:43 [notice] 1#1: using the "epoll" event method
+2023/04/08 07:10:43 [notice] 1#1: nginx/1.22.1
+2023/04/08 07:10:43 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+2023/04/08 07:10:43 [notice] 1#1: OS: Linux 5.15.0-56-generic
+2023/04/08 07:10:43 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/04/08 07:10:43 [notice] 1#1: start worker processes
+2023/04/08 07:10:43 [notice] 1#1: start worker process 29
+2023/04/08 07:10:43 [notice] 1#1: start worker process 30
+2023/04/08 07:10:43 [notice] 1#1: start worker process 31
+2023/04/08 07:10:43 [notice] 1#1: start worker process 32
+2023/04/08 07:10:43 [notice] 1#1: start worker process 33
+2023/04/08 07:10:43 [notice] 1#1: start worker process 34
+2023/04/08 07:10:43 [notice] 1#1: start worker process 35
+2023/04/08 07:10:43 [notice] 1#1: start worker process 36

@@ -2,10 +2,8 @@ version: '3.9'
 
 services:
   mysql:
-    image: mysql:8.0
+    image: mysql:5.7.41
     container_name: BE_mysql_${APP_NAME}
-    volumes:
-      - ../docker/mysql/db:/var/lib/mysql
     environment:
       - "MYSQL_ROOT_PASSWORD=root_password"
       - MYSQL_DATABASE=${MYSQL_DATABASE}
@@ -15,7 +13,6 @@ services:
       - "3306:3306"
     networks:
       - app-network
-
   redis:
     image: redis:6.2.6-alpine
     container_name: BE_redis_${APP_NAME}
@@ -42,7 +39,7 @@ services:
     build:
       context: ../docker/php
       dockerfile: Dockerfile
-    container_name: BE_php_${APP_NAME}
+    container_name: backend_${APP_NAME}
     environment:
       - TZ=$TZ
     ports:
@@ -50,26 +47,20 @@ services:
       - "8002:8001"
     volumes:
       - ../backend:/var/www/html/BE
-      - ../docker/php/php.ini:/usr/local/etc/php/php.ini
+      - ../docker/php/php.ini:/etc/php8/php.ini
+      - ../docker/php/www.conf:/etc/php8/php-fpm.d/www.conf
     networks:
       - app-network
-  composer:
-    image: composer:2.3.7
-    container_name: BE_composer_${APP_NAME}
+  npm:
+    image: node:16.14-alpine3.15
+    container_name: npm_fontend
     command: tail -f /dev/null
     volumes:
       - ../backend:/var/www/html/BE
-    working_dir: /var/www/html/BE
-    networks:
-      - app-network
-
-  BE_npm:
-    image: node:18.15-alpine
-    container_name: BE_npm_${APP_NAME}
-    command: tail -f /dev/null
-    volumes:
-      - ../backend:/var/www/html/BE
-    working_dir: /var/www/html/BE
+      - ../fontend:/var/www/html/FE
+    ports:
+      - "3000:3000"
+    working_dir: /var/www/html
     networks:
       - app-network
   nginx:
@@ -94,20 +85,7 @@ services:
       - ../docker/nginx/log:/var/log/nginx
     depends_on:
       - php
-      - FE_npm
-    networks:
-      - app-network
-
-  FE_npm:
-    image: node:18.15-alpine
-    container_name: FE_npm_${APP_NAME}
-    command: tail -f /dev/null
-    ports:
-      - 3000:3000
-      - 3001:3001
-    volumes:
-      - ../fontend:/var/www/html/FE
-    working_dir: /var/www/html/FE
+      - npm
     networks:
       - app-network
 
