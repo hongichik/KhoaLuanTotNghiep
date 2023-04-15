@@ -1,15 +1,24 @@
 import { setUser } from "@/actions/userAction";
 import AuthAPI from "@/pages/api/authAPI";
-import { RootState } from "@/reducers";
 import { User } from "@/types/user";
-import { useRouter } from "next/router";
+import Image from "next/image";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import Cookie from "@/utils/cookie";
 import Header from "./header";
 const Layout: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     const dispatch = useDispatch();
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const CheckUser = async () => {
+        if (Cookie.GetCookie('accessToken') === undefined)
+        {
+            setLoading(false);
+            return;
+        }
+        else
+        {
+            setLoading(true);
+        }
         const result = await AuthAPI.CheckLogin();
         if (result) {
             const userData: User = {
@@ -26,11 +35,16 @@ const Layout: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
 
     useEffect(() => {
         CheckUser();
-    }, );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[]);
     if (loading) {
         return (
-            <div className="flex justify-center items-center h-screen">
-                <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
+            <div className="flex justify-center items-center h-screen relative">
+                <div className="animate-spin rounded-full h-44 w-44 border-t-4 border-b-4 border-blue-500">
+                </div>
+                <div className="h-32 w-32 absolute flex">
+                    <Image className='object-contain h-32 w-32' src="/logo/logo_page.svg" alt="Icon" width={300} height={300} />
+                </div>
             </div>
         );
     }

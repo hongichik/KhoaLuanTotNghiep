@@ -15,6 +15,9 @@ class MenuItemsTableSeeder extends Seeder
      */
     public function run()
     {
+        $this->call([
+            MenuItemsTableSeederUser::class,
+        ]);
         $menu = Menu::where('name', 'admin')->firstOrFail();
 
         $menuItem = MenuItem::firstOrNew([

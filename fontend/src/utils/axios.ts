@@ -36,7 +36,7 @@ class AxiosClass {
         }
     }
 
-    async post(url:string, data:any) {
+    async post(url:string, data?:any) {
         try {
             const response = await this.$axios.post(url, data);
 
@@ -46,7 +46,7 @@ class AxiosClass {
         }
     }
 
-    async patch(url:string, data:any) {
+    async patch(url:string, data?:any) {
         try {
             const response = await this.$axios.patch(url, data);
             return response.data.data;

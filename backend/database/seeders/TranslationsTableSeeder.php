@@ -56,10 +56,6 @@ class TranslationsTableSeeder extends Seeder
         //
         $_fld = 'display_name_singular';
         $_tpl = ['data_types', $_fld];
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.post.singular'))->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Post');
-        }
         $dtp = DataType::where($_fld, __('voyager::seeders.data_types.page.singular'))->firstOrFail();
         if ($dtp->exists) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Página');
@@ -85,10 +81,6 @@ class TranslationsTableSeeder extends Seeder
         //
         $_fld = 'display_name_plural';
         $_tpl = ['data_types', $_fld];
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.post.plural'))->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Posts');
-        }
         $dtp = DataType::where($_fld, __('voyager::seeders.data_types.page.plural'))->firstOrFail();
         if ($dtp->exists) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Páginas');
@@ -157,10 +149,6 @@ class TranslationsTableSeeder extends Seeder
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Media');
         }
 
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.posts'));
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Publicações');
-        }
 
         $_item = $this->findMenuItem(__('voyager::seeders.menu_items.users'));
         if ($_item->exists) {

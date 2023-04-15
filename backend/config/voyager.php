@@ -27,7 +27,7 @@ return [
     */
 
     'controllers' => [
-        'namespace' => 'TCG\\Voyager\\Http\\Controllers',
+        'namespace' => 'App\\Http\\Controllers\\voyager\\Controllers',
     ],
 
     /*
@@ -42,7 +42,7 @@ return [
     */
 
     'models' => [
-        //'namespace' => 'App\\Models\\',
+        'namespace' => 'App\\Models\\',
     ],
 
     /*
@@ -104,13 +104,13 @@ return [
         /*
          * Select default language
          */
-        'default' => 'en',
+        'default' => 'vi',
 
         /*
          * Select languages that are supported.
          */
         'locales' => [
-            'en',
+            'vi',
             //'pt',
         ],
     ],
@@ -127,26 +127,23 @@ return [
     'dashboard' => [
         // Add custom list items to navbar's dropdown
         'navbar_items' => [
-            'voyager::generic.profile' => [
-                'route'      => 'voyager.profile',
-                'classes'    => 'class-full-of-rum',
-                'icon_class' => 'voyager-person',
+            'Profile' => [
+                'route'         => 'voyager.profile',
+                'classes'       => 'class-full-of-rum',
+                'icon_class'    => 'voyager-person',
             ],
-            'voyager::generic.home' => [
-                'route'        => '/',
-                'icon_class'   => 'voyager-home',
-                'target_blank' => true,
+            'Home' => [
+                'route'         => '/',
+                'icon_class'    => 'voyager-home',
+                'target_blank'  => true,
             ],
-            'voyager::generic.logout' => [
+            'Logout' => [
                 'route'      => 'voyager.logout',
                 'icon_class' => 'voyager-power',
             ],
         ],
-
         'widgets' => [
-            'TCG\\Voyager\\Widgets\\UserDimmer',
-            'TCG\\Voyager\\Widgets\\PostDimmer',
-            'TCG\\Voyager\\Widgets\\PageDimmer',
+
         ],
 
     ],
@@ -185,7 +182,7 @@ return [
 
     'primary_color' => '#22A7F0',
 
-    'show_dev_tips' => true, // Show development tip "How To Use:" in Menu and Settings
+    'show_dev_tips' => false, // Show development tip "How To Use:" in Menu and Settings
 
     // Here you can specify additional assets you would like to be included in the master.blade
     'additional_css' => [
@@ -197,12 +194,6 @@ return [
     ],
 
     'googlemaps' => [
-        'key'    => env('GOOGLE_MAPS_KEY', ''),
-        'center' => [
-            'lat' => env('GOOGLE_MAPS_DEFAULT_CENTER_LAT', '32.715738'),
-            'lng' => env('GOOGLE_MAPS_DEFAULT_CENTER_LNG', '-117.161084'),
-        ],
-        'zoom' => env('GOOGLE_MAPS_DEFAULT_ZOOM', 11),
     ],
 
     // Activate compass when environment is NOT local

@@ -30,10 +30,8 @@ const Register = async (data: FormData) => {
 }
 const CheckLogin = async () => {
 
-    if (Cookie.GetCookie('accessToken') === undefined)
-        return false;
     const result = await Axios.post('api/checkUser', {});
-    if (result.error) {
+    if (result.error || !result) {
         Cookie.RemoveCookie('accessToken');
         return false;
     }

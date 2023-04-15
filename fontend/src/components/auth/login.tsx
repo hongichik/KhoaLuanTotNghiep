@@ -17,7 +17,7 @@ const Login = () => {
         event.preventDefault();
         const formData = new FormData(event.target);
         const result = await AuthAPI.Login(formData);
-        if(result)
+        if(result.status === 'success')
         {
             const userData: User = {
                 avatar: result.user.avatar,
