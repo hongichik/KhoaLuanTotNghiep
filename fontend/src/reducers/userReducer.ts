@@ -10,6 +10,12 @@ const userReducer = (state = initialState, action:any) => {
                 user: action.payload
             }
         }
+        case 'REMOVE_USER': {
+            return {
+                ...state,
+                user: {}
+            }
+        }
         default:
             return state;
     }

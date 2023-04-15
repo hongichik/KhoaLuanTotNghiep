@@ -26,7 +26,7 @@ const Layout: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
 
     useEffect(() => {
         CheckUser();
-    }, []);
+    }, );
     if (loading) {
         return (
             <div className="flex justify-center items-center h-screen">

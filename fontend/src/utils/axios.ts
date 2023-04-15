@@ -11,8 +11,8 @@ class AxiosClass {
             baseURL: process.env.API_HOST,
             timeout: 300000,
             headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
+                Accept: 'multipart/form-data',
+                'Content-Type': 'multipart/form-data',
                 
             },
             // withCredentials: true

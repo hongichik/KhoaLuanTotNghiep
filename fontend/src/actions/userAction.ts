@@ -6,3 +6,10 @@ export const setUser = (user:User) =>{
         payload: user
     }
 }
+
+export const removeUserAction = () =>{
+    return {
+        type: 'REMOVE_USER',
+        payload: null
+    }
+}
