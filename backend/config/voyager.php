@@ -9,7 +9,6 @@ return [
     | Here you can specify voyager user configs
     |
     */
-
     'user' => [
         'add_default_role_on_register' => true,
         'default_role'                 => 'user',
@@ -28,6 +27,7 @@ return [
 
     'controllers' => [
         'namespace' => 'App\\Http\\Controllers\\voyager\\Controllers',
+        // 'namespace' => 'TCG\\Voyager\\Http\\Controllers',
     ],
 
     /*
@@ -42,7 +42,7 @@ return [
     */
 
     'models' => [
-        'namespace' => 'App\\Models\\',
+        // 'namespace' => 'App\\Models\\',
     ],
 
     /*

@@ -17,6 +17,7 @@ class VoyagerDummyDatabaseSeeder extends Seeder
             CategoriesTableSeeder::class,
             UsersTableSeeder::class,
             PagesTableSeeder::class,
+            Custom\index::class,
             TranslationsTableSeeder::class,
             PermissionRoleTableSeeder::class,
         ]);

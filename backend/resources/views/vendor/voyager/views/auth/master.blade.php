@@ -45,7 +45,6 @@
     <div class="row">
         <div class="faded-bg animated"></div>
         <div class="hidden-xs col-sm-7 col-md-8">
-            <h1>Đăng nhập</h1>
             <div class="clearfix">
                 <div class="col-sm-12 col-md-10 col-md-offset-2">
                     <div class="logo-title-container">

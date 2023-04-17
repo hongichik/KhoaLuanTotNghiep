@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use TCG\Voyager\Models\Category;
+use App\Models\Category;
 use TCG\Voyager\Models\DataRow;
 use TCG\Voyager\Models\DataType;
 use TCG\Voyager\Models\Menu;
@@ -108,7 +108,20 @@ class CategoriesTableSeeder extends Seeder
                 'order'        => 4,
             ])->save();
         }
-
+        $dataRow = $this->dataRow($categoryDataType, 'image');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'image',
+                'display_name' => 'image',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 5,
+            ])->save();
+        }
         $dataRow = $this->dataRow($categoryDataType, 'slug');
         if (!$dataRow->exists) {
             $dataRow->fill([
@@ -125,7 +138,7 @@ class CategoriesTableSeeder extends Seeder
                         'origin' => 'name',
                     ],
                 ],
-                'order' => 5,
+                'order' => 6,
             ])->save();
         }
 
@@ -140,7 +153,7 @@ class CategoriesTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 6,
+                'order'        => 7,
             ])->save();
         }
 
@@ -155,7 +168,7 @@ class CategoriesTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 7,
+                'order'        => 8,
             ])->save();
         }
 
@@ -187,6 +200,7 @@ class CategoriesTableSeeder extends Seeder
         if (!$category->exists) {
             $category->fill([
                 'name' => 'Category 1',
+                'image' => 'https://source.unsplash.com/random'
             ])->save();
         }
 
@@ -196,6 +210,7 @@ class CategoriesTableSeeder extends Seeder
         if (!$category->exists) {
             $category->fill([
                 'name' => 'Category 2',
+                'image'=> 'https://source.unsplash.com/random'
             ])->save();
         }
     }

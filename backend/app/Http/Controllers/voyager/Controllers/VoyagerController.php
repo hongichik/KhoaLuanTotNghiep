@@ -81,19 +81,7 @@ class VoyagerController extends Controller
 
     public function assets(Request $request)
     {
-        try {
-            if (class_exists(\League\Flysystem\Util::class)) {
-                // Flysystem 1.x
-                $path = dirname(__DIR__, 3).'/publishable/assets/'.\League\Flysystem\Util::normalizeRelativePath(urldecode($request->path));
-            } elseif (class_exists(\League\Flysystem\WhitespacePathNormalizer::class)) {
-                // Flysystem >= 2.x
-                $normalizer = new \League\Flysystem\WhitespacePathNormalizer();
-                $path = dirname(__DIR__, 3).'/publishable/assets/'. $normalizer->normalizePath(urldecode($request->path));
-            }
-            
-        } catch (\LogicException $e) {
-            abort(404);
-        }
+        $path = base_path('vendor/tcg/voyager/publishable/assets/' . urldecode($request->path));
 
         if (File::exists($path)) {
             $mime = '';
@@ -104,14 +92,15 @@ class VoyagerController extends Controller
             } else {
                 $mime = File::mimeType($path);
             }
+    
             $response = response(File::get($path), 200, ['Content-Type' => $mime]);
             $response->setSharedMaxAge(31536000);
             $response->setMaxAge(31536000);
             $response->setExpires(new \DateTime('+1 year'));
-
+    
             return $response;
         }
-
+    
         return response('', 404);
     }
 

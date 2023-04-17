@@ -111,3 +111,8 @@
 
 ##
 > jwt https://laravel-jwt-auth.readthedocs.io/en/latest/laravel-installation/#examples
+
+# Laravel
+> php artisan migrate:refresh --seed
+> php artisan make:controller voyager/Controllers/Custom/
+
