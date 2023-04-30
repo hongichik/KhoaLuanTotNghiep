@@ -2,26 +2,23 @@
 import Layout from '@/layouts'
 import Link from 'next/link'
 
+import BannerTop from '@/components/home/Bannertop';
+import Category from '../components/home/Category';
+import Discount from '../components/home/Discount';
+import BannerBetween from '@/components/home/BannerBetween';
+import Products from '@/components/home/Products';
+import DetailProduct from '@/components/product/DetailProduct';
+
 export default function Home() {
+
   return (
     <>
-      <Layout>
-        <h1>Noi dung </h1>
-        <h3>Noi dung</h3>
-        <h1>Noi dung</h1>
-        <h3>Noi dung</h3>
-        <h1>Noi dung</h1>
-        <h3>Noi dung</h3>
-        <h1>Noi dung</h1>
-        <h3>Noi dung</h3>
-        <h1>Noi dung</h1>
-        <h3>Noi dung</h3>
-        <h1>Noi dung</h1>
-        <h3>Noi dung</h3>
-        <h1>Noi dung</h1>
-        <h3>Noi dung</h3>
-        <Link href="/about">About Us</Link>
-      </Layout>
+        <BannerTop/>
+        <Category/>
+        <Discount/>
+        <BannerBetween/>
+        <Products/>
+        <DetailProduct/>
     </>
   )
 }

@@ -1,7 +1,6 @@
 import { EnCode } from "@/utils/encode";
 import Cookie from "@/utils/cookie";
 import Axios from "@/utils/axios";
-import { removeUserAction } from '../../actions/userAction';
 
 const Login = async (data:FormData)=>{
     const result = await Axios.post('api/login',data);
@@ -46,8 +45,7 @@ const Logout = async () => {
     const data = await Axios.post('api/logout', {});
     if (data.status === "success") {
         Cookie.RemoveCookie('accessToken');
-        const action = removeUserAction();
-        return action;
+        return;
     }
     return false;
 }

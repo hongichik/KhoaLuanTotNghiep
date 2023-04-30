@@ -96,8 +96,6 @@
 > docker exec -it npm_fontend /bin/sh
 ### vào bên trong php
 > docker exec -it backend_myweb /bin/sh
-### vào bên trong compose 
-> docker exec -it BE_composer_myweb /bin/bash
 ### cấp quyền cho thư mục 
 - cấp quyền cho cho tất cả các file (chỉ dùng cho backend_...)
 >chmod -R 777 .

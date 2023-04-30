@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
+use App\Models\Advertisement;
 use Illuminate\Http\Request;
 
 class AdvertisementController extends Controller
@@ -11,10 +13,23 @@ class AdvertisementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($location)
     {
-        //
+        $ads = Advertisement::where('location', $location)->where('status',true);
+        
+        if ($location === 'carousel_banner_right' || $location === 'seo_bettween') {
+            $ads->orderBy('order', 'desc');
+        } else {
+            $ads->orderBy('id', 'desc');
+        }
+        
+        $maxDisplayCount = $location === 'banner_left' ? 2 : ($location === 'carousel_banner_right' ? 10 : ($location === 'seo_bettween' ? 10 : 1));
+        
+        $latestAds = $ads->take($maxDisplayCount)->get();
+        
+        return $latestAds;
     }
+    
 
     /**
      * Show the form for creating a new resource.

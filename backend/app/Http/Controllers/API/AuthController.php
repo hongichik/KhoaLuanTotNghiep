@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Storage;
 class AuthController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth:api', ['except' => ['login', 'register']]);
-    }
 
     public function checkUser(Request $request)
     {
@@ -25,44 +21,8 @@ class AuthController extends Controller
     }
     public function login(LoginRequest $request)
     {
-        // // Kiểm tra xem thư mục certs có tồn tại hay không
-        // if (!Storage::exists('certs')) {
-        //     // Nếu không tồn tại thì tạo mới
-        //     Storage::makeDirectory('certs');
-        // }
-
-        // // Kiểm tra xem file iv.key đã tồn tại hay chưa
-        // if (!Storage::exists('certs/iv.key')) {
-        //     // Tạo một initialization vector ngẫu nhiên
-        //     $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('aes-256-cbc'));
-        //     // Lưu initialization vector vào file iv.key
-        //     Storage::put('certs/iv.key', $iv);
-        // } else {
-        //     // Đọc initialization vector từ file iv.key
-        //     $iv = Storage::get('certs/iv.key');
-        // }
-
-
         // $credentials = $request->only('email', 'password');
         // $token = auth('api')->attempt($credentials);
-        // $key = '123456789'; // Chuỗi ký tự key
-
-        // $encrypted = openssl_encrypt($token, 'aes-256-cbc', $key, 0, $iv); // Mã hóa token
-
-        // // Đọc initialization vector từ file iv.key
-        // $iv = file_get_contents(Storage::path('certs/iv.key'));
-
-        // $decrypted = openssl_decrypt($encrypted, 'aes-256-cbc', $key, 0, $iv); // Giải mã token
-
-        // if ($token == $decrypted) {
-        //     return response()->json([
-        //         '1' => $token,
-        //         '2' => $encrypted,
-        //         '3' => $decrypted,
-        //     ], 401);
-        // } else {
-        //     dd("loi");
-        // }
         // if (!$token) {
         //     return response()->json([
         //         'status' => 'error',
@@ -70,24 +30,52 @@ class AuthController extends Controller
         //     ], 401);
         // }
 
-        $credentials = $request->only('email', 'password');
-        $token = auth('api')->attempt($credentials);
-        if (!$token) {
+        // $user = auth('api')->user();
+        // return response()->json([
+        //     'status' => 'success',
+        //     'user' => $user,
+        //     'authorisation' => [
+        //         'token' => $token,
+        //         'type' => 'bearer',
+        //     ]
+        // ]);
+
+
+        try {
+
+            $credentials = request(['email', 'password']);
+
+            if (!Auth::attempt($credentials)) {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Unauthorized',
+                ], 401);
+            }
+
+            $user = User::where('email', $request->email)->first();
+
+            if (!Hash::check($request->password, $user->password, [])) {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Unauthorized',
+                ], 401);
+            }
+
+            $tokenResult = $user->createToken('authToken')->plainTextToken;
+            return response()->json([
+                'status' => 'success',
+                'user' => $user,
+                'authorisation' => [
+                    'token' => $tokenResult,
+                    'type' => 'bearer',
+                ]
+            ]);
+        } catch (\Exception $error) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Unauthorized',
+                'message' => $error,
             ], 401);
         }
-
-        $user = auth('api')->user();
-        return response()->json([
-            'status' => 'success',
-            'user' => $user,
-            'authorisation' => [
-                'token' => $token,
-                'type' => 'bearer',
-            ]
-        ]);
     }
 
     public function register(RegisterRequest $request)
@@ -107,14 +95,13 @@ class AuthController extends Controller
                     'address'   => $request->address
                 ]);
 
-                $credentials = $request->only('email', 'password');
-                $token = auth('api')->attempt($credentials);
+                $tokenResult = $user->createToken('authToken')->plainTextToken;
                 return response()->json([
                     'status' => 'success',
                     'message' => 'User created successfully',
                     'user' => $user,
                     'authorisation' => [
-                        'token' => $token,
+                        'token' => $tokenResult,
                         'type' => 'bearer',
                     ]
                 ]);
@@ -132,9 +119,14 @@ class AuthController extends Controller
         }
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
-        Auth::logout();
+        if (!$request->bearerToken()) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+        
+        $request->user()->currentAccessToken()->delete();
+        
         return response()->json([
             'status' => 'success',
             'message' => 'Successfully logged out',

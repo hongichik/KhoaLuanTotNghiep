@@ -14,13 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('advertisements', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('name'); 
             $table->string('image'); 
             $table->string('location'); 
             $table->string('url');
             $table->boolean('status')->default(true);
-            $table->integer('order')->default(0);
+            $table->integer('order')->nullable();
             $table->timestamps();
         });
     }

@@ -10,6 +10,6 @@ module.exports = {
     return config;
   },
   images: {
-    domains: [],
-  },
+    domains: ['be_domain.com'],
+  }
 };

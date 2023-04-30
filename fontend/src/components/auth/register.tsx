@@ -1,12 +1,12 @@
-import { setUser } from "@/actions/userAction";
 import AuthAPI from "@/pages/api/authAPI";
-import { User } from "@/types/user";
 import Image from "next/image";
 import { useEffect, useState } from 'react';
 import Dropzone from 'react-dropzone';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
 import { RootState } from "@/reducers";
+import { User } from "../type/user";
+import { useLayoutContext } from '../../layouts/index';
 
 interface ErrorObject {
     avatar?: string;
@@ -24,10 +24,8 @@ const Register = () => {
     const lableClassName = "peer-focus:font-medium absolute  text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6";
     const [fileAvatar, setFile] = useState<File | null>(null);
     const [error, setError] = useState<ErrorObject>({});
-    const dispatch = useDispatch();
+    const user = useLayoutContext();
     const router = useRouter();
-    const infoUser = useSelector((state: RootState) => state.user.user);
-    const auth = Object.keys(infoUser).length === 0;
     const phoneNumberInputChange = (event: React.FormEvent<HTMLInputElement>) => {
         let value = event.currentTarget.value;
         if (value === '') {
@@ -58,27 +56,28 @@ const Register = () => {
             });
         }
         const result = await AuthAPI.Register(formData);
-        console.log(result);
         if (!result.errors) {
             const userData: User = {
                 avatar: result.user.avatar,
                 name: result.user.name,
-                id: result.user.id
+                id: result.user.id,
+                address: result.user.address,
+                phone: result.user.phone,
+                login: true,
 
             }
-            const action = setUser(userData);
-            dispatch(action);
+            user?.setUser(userData);
             router.push('/about');
         }
         else {
             setError({ ...error, ...result.errors });
         }
     }
-    useEffect(() => {
-        if (!auth) {
-          router.push('/');
-        }
-      }, [auth, router]);
+    // useEffect(() => {
+    //     if (!auth) {
+    //       router.push('/');
+    //     }
+    //   }, [auth, router]);
     return (
         <form className="w-full pb-24 flex flex-col" onSubmit={SubmitForm}>
             <div className="flex flex-col w-full mb-6">

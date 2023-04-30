@@ -6,11 +6,12 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 
-class User extends \TCG\Voyager\Models\User implements JWTSubject
+class User extends \TCG\Voyager\Models\User 
 {
-    use  HasFactory, Notifiable;
+    use  HasFactory, Notifiable, HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
@@ -25,7 +26,10 @@ class User extends \TCG\Voyager\Models\User implements JWTSubject
         'address',
         'password',
     ];
-
+    public function cart()
+    {
+        return $this->hasMany(Cart::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

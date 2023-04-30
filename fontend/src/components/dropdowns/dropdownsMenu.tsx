@@ -28,7 +28,7 @@ export const DropdownPC: React.FC<DropdownProps> = ({ dropdown }) => {
                 <Image src={'/icon/down_icon.svg'} className="w-6 ml-1" alt="icon" width={30} height={30} />
             </p>
             {drop &&
-                <div className="dropMenu">
+                <div className="dropMenu z-20">
                     {dropdown.children.map((item:any, index:any) => (
                         <div className="flex hover:bg-slate-100" key={index}>
                             <Link href={item.url} className='px-6 py-2 ' key={index}>{item.title}</Link>

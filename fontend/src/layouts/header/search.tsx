@@ -21,13 +21,13 @@ const Search = ({ className }: { className: string }) => {
 
     const handlerSubmit = (event: React.FormEvent<HTMLFormElement>) =>{
         event.preventDefault();
-        console.log(searchRef.current?.value);
+        // console.log(searchRef.current?.value);
     }
     return (
         <div ref={dropdownRef} className={`relative flex` + className}>
             <IconNavbar onClick={() => { setDrop(!drop) }} src="/icon/search_icon.svg" alt="Icon search" />
             {drop &&
-                <div className="dropMenu w-96 p-2 ">
+                <div className="dropMenu w-96 p-2 z-10">
                     <form className="w-pull h-pull flex text-sm" onSubmit={handlerSubmit}>
                         <input ref={searchRef} type="text" className="input_from my-auto" placeholder="Tìm kiếm" required />
                         <button type="submit" className="my-auto ml-3 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg  px-5 py-2.5 text-center ">

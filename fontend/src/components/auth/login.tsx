@@ -2,17 +2,14 @@ import Image from "next/image";
 import { useState } from 'react';
 import AuthAPI from "@/pages/api/authAPI";
 import { useRouter } from 'next/router'
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@/reducers";
-import { setUser } from '../../actions/userAction';
-import { User } from "@/types/user";
+import { User } from "../type/user";
+import { useLayoutContext } from '../../layouts/index';
 
 const Login = () => {
     const [showPass, setShowPass] = useState(false);
     const [error, setError] = useState(false);
     const router = useRouter();
-    const infoUser = useSelector((state: RootState) => state.user.user);
-    const dispatch = useDispatch();
+    const user = useLayoutContext();
     const SubmitForm = async (event:any) =>{
         event.preventDefault();
         const formData = new FormData(event.target);
@@ -22,13 +19,13 @@ const Login = () => {
             const userData: User = {
                 avatar: result.user.avatar,
                 name: result.user.name,
-                id: result.user.id
-
+                id: result.user.id,
+                address: result.user.address,
+                phone: result.user.phone,
+                login: true,
             }
-
-            const action = setUser(userData);
-            dispatch(action);
-            router.push('/about');
+            user?.setUser(userData);
+            router.push('/');
             
         }
         else

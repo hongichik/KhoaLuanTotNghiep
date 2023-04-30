@@ -19,6 +19,7 @@ class index extends Seeder
     {
         require_once(database_path('seeders/Custom/Bread/Advertisement.php'));
         require_once(database_path('seeders/Custom/Bread/Products.php'));
+        require_once(database_path('seeders/Custom/Bread/Pay.php'));
     }
 
     protected function dataRow($type, $field)

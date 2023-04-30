@@ -200,7 +200,7 @@ class CategoriesTableSeeder extends Seeder
         if (!$category->exists) {
             $category->fill([
                 'name' => 'Category 1',
-                'image' => 'https://source.unsplash.com/random'
+                'image' => 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
             ])->save();
         }
 
@@ -210,7 +210,92 @@ class CategoriesTableSeeder extends Seeder
         if (!$category->exists) {
             $category->fill([
                 'name' => 'Category 2',
-                'image'=> 'https://source.unsplash.com/random'
+                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+            ])->save();
+        }
+
+        $category = Category::firstOrNew([
+            'slug' => 'category-3',
+        ]);
+        if (!$category->exists) {
+            $category->fill([
+                'name' => 'Category 3',
+                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+            ])->save();
+        }
+
+        $category = Category::firstOrNew([
+            'slug' => 'category-4',
+        ]);
+        if (!$category->exists) {
+            $category->fill([
+                'name' => 'Category 4',
+                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+            ])->save();
+        }
+        $category = Category::firstOrNew([
+            'slug' => 'category-5',
+        ]);
+        if (!$category->exists) {
+            $category->fill([
+                'name' => 'Category 5',
+                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+            ])->save();
+        }
+        $category = Category::firstOrNew([
+            'slug' => 'category-6',
+        ]);
+        if (!$category->exists) {
+            $category->fill([
+                'name' => 'Category 6',
+                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+            ])->save();
+        }
+        $category = Category::firstOrNew([
+            'slug' => 'category-7',
+        ]);
+        if (!$category->exists) {
+            $category->fill([
+                'name' => 'Category 7',
+                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+            ])->save();
+        }
+        $category = Category::firstOrNew([
+            'slug' => 'category-8',
+        ]);
+        if (!$category->exists) {
+            $category->fill([
+                'name' => 'Category 8',
+                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+            ])->save();
+        }
+        $category = Category::firstOrNew([
+            'slug' => 'category-9',
+        ]);
+        if (!$category->exists) {
+            $category->fill([
+                'name' => 'Category 9',
+                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+            ])->save();
+        }
+
+        $category = Category::firstOrNew([
+            'slug' => 'category-10',
+        ]);
+        if (!$category->exists) {
+            $category->fill([
+                'name' => 'Category 10',
+                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+            ])->save();
+        }
+
+        $category = Category::firstOrNew([
+            'slug' => 'category-11',
+        ]);
+        if (!$category->exists) {
+            $category->fill([
+                'name' => 'Category 11',
+                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
             ])->save();
         }
     }

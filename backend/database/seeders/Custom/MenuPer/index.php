@@ -15,5 +15,6 @@ class index extends Seeder
     {
         require_once(database_path('seeders/Custom/MenuPer/Advertisement.php'));
         require_once(database_path('seeders/Custom/MenuPer/Products.php'));
+        require_once(database_path('seeders/Custom/MenuPer/Pay.php'));
     }
 }

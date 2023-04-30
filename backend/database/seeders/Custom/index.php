@@ -15,6 +15,7 @@ class index extends Seeder
     public function run()
     {
         $this->call([
+            Seeders\ProductSeeder::class,
             Seeders\AdvertisementSeeder::class,
             MenuPer\index::class,
             Bread\index::class

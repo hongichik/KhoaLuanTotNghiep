@@ -1,60 +1,83 @@
-import { setUser } from "@/actions/userAction";
 import AuthAPI from "@/pages/api/authAPI";
-import { User } from "@/types/user";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import Cookie from "@/utils/cookie";
 import Header from "./header";
+import Footer from "./footer";
+import { User } from "@/components/type/user";
+
+interface contextProps {
+    user: User,
+    setUser: React.Dispatch<React.SetStateAction<User>>;
+}
+const LayoutContext = createContext<contextProps | undefined>(undefined);
 const Layout: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
-    const dispatch = useDispatch();
     const [loading, setLoading] = useState(false);
+    const [user, setUser] = useState<User>({
+        avatar: "",
+        name: "",
+        id: 0,
+        login: false
+    });
     const CheckUser = async () => {
-        if (Cookie.GetCookie('accessToken') === undefined)
-        {
+
+        if (Cookie.GetCookie('accessToken') === undefined) {
             setLoading(false);
             return;
         }
-        else
-        {
+        else {
             setLoading(true);
         }
+        
         const result = await AuthAPI.CheckLogin();
         if (result) {
             const userData: User = {
                 avatar: result.avatar,
                 name: result.name,
-                id: result.id
+                id: result.id,
+                address: result.address,
+                phone: result.phone,
+                login: true
 
             }
-            const action = setUser(userData);
-            dispatch(action);
+            setUser(userData);
         }
         setLoading(false);
     }
 
     useEffect(() => {
         CheckUser();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
     if (loading) {
         return (
-            <div className="flex justify-center items-center h-screen relative">
-                <div className="animate-spin rounded-full h-44 w-44 border-t-4 border-b-4 border-blue-500">
-                </div>
-                <div className="h-32 w-32 absolute flex">
-                    <Image className='object-contain h-32 w-32' src="/logo/logo_page.svg" alt="Icon" width={300} height={300} />
+            <div>
+                <div className="flex justify-center items-center h-screen relative">
+                    <div className="animate-spin rounded-full h-44 w-44 border-t-4 border-b-4 border-blue-500">
+                    </div>
+                    <div className="h-32 w-32 absolute flex">
+                        <Image className='object-contain h-32 w-32' src="/logo/logo_page.svg" alt="Icon" width={300} height={300} />
+                    </div>
                 </div>
             </div>
+
         );
     }
+    const value:contextProps = {
+        user,
+        setUser
+    }
     return (
-        <>
+        <LayoutContext.Provider value={value}>
             <Header />
             {children}
-            <h1>cuoi trang</h1>
-        </>
+            <Footer />
+        </LayoutContext.Provider>
     )
 }
 
 export default Layout;
+
+export function useLayoutContext() {
+    return useContext(LayoutContext);
+}
