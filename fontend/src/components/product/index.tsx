@@ -46,7 +46,7 @@ const Product: React.FC<ProductProps> = ({ product}) => {
                 src={process.env.API_HOST + 'storage/' + product.main_image}
                 loader={() => process.env.API_HOST + 'storage/' + product.main_image}
                 alt={product.title} width={200} height={200} className='rounded-t-lg image-1-1' />
-            <Link href={product.slug} >
+            <Link href={"/product/"+product.slug} >
                 <div className="p-3 pt-1">
                     <p className="truncate line-clamp-2 whitespace-pre-wrap w-full  h-12">{product.title}</p>
                     <p className="text-red-500 text-xl" >{Math.ceil((product.price - product.price * product.discount/100)).toLocaleString('vi-VN')} đ</p>

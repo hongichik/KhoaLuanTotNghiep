@@ -6,9 +6,14 @@ const setCart = async (id:number, data:FormData) =>{
 const deleteCart = async (id:number) =>{
     return Axios.delete(`/api/cart/${id}`);
 }
+
+const getCart = async ()=>{
+    return await Axios.get('/api/cart');
+} 
 const CartAPI = {
     setCart,
-    deleteCart
+    deleteCart,
+    getCart
 }
 
 export default CartAPI;

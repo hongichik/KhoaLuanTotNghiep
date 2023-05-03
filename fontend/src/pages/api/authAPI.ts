@@ -27,18 +27,18 @@ const Register = async (data: FormData) => {
         return result;
     }
 }
-const CheckLogin = async () => {
+    const CheckLogin = async () => {
 
-    const result = await Axios.post('api/checkUser', {});
-    if (result.error || !result) {
-        Cookie.RemoveCookie('accessToken');
-        return false;
-    }
-    else {
-        return result;
-    }
+        const result = await Axios.post('api/checkUser', {});
+        if (result.error || !result) {
+            Cookie.RemoveCookie('accessToken');
+            return false;
+        }
+        else {
+            return result;
+        }
 
-}
+    }
 
 
 const Logout = async () => {

@@ -103,4 +103,12 @@ class Product extends Model
             'pagination' => $pagination,
         ];
     }
+
+    public function getProduct($slug)
+    {
+         $product = Product::where('slug',$slug)->first();
+         $product->images = json_decode($product->images);
+         $product->detail = json_decode($product->detail);
+         return $product;
+    }
 }

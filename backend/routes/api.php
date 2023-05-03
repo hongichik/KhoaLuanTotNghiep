@@ -13,6 +13,7 @@ use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\MenuCoontroller;
 use App\Http\Controllers\API\PayController;
 use App\Http\Controllers\API\ProductController;
+use Illuminate\Support\Facades\Hash;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,15 @@ Route::middleware(['ForceJson'])->group(function () {
         Route::post('/checkUser', [AuthController::class, 'checkUser']);
         Route::post('/logout', [AuthController::class, 'logout']);
         Route::post('/refresh', [AuthController::class, 'refresh']);
+
+        Route::prefix('/cart')->group(function () {
+            Route::post('/{id}', [CartController::class, 'addCart']);
+            Route::get('/', [CartController::class, 'getCart']);
+            Route::delete('/{id}', [CartController::class, 'deleteCart']);
+        });
+        Route::prefix('/pay')->group(function () {
+            Route::post('/create', [PayController::class, 'create']);
+        });
     });
     Route::controller(AuthController::class)->group(function () {
         Route::post('login', 'login');
@@ -45,14 +55,14 @@ Route::middleware(['ForceJson'])->group(function () {
 
     Route::prefix('/product')->group(function () {
         Route::post('/discount', [ProductController::class, 'discount']);
+        Route::get('/detailProduct/{slug}', [ProductController::class, 'detailProduct']);
         Route::post('', [ProductController::class, 'index']);
     });
 
-    Route::prefix('/cart')->group(function () {
-        Route::post('/{id}', [CartController::class, 'addCart']);
-        Route::delete('/{id}', [CartController::class, 'deleteCart']);
-    });
-    Route::prefix('/pay')->group(function () {
-        Route::post('/create', [PayController::class, 'create']);
-    });
+
+});
+
+Route::get('/test', function ()
+{
+    return Hash::make("U2FsdGVkX1/DO44Jhmoub0U0c2wOwcrK8U09pGIxPFNaZHfwdjH1PymOZRlV8vcxaqBV0mZNFPXofxXkJ+xIZQ==");
 });

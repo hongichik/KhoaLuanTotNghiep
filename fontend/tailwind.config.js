@@ -34,6 +34,9 @@ module.exports = {
 
         },
       },
+      width: {
+        '500px': '500px'
+      }
     },
   },
   plugins: [],

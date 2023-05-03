@@ -6,6 +6,7 @@ import Cookie from "@/utils/cookie";
 import Header from "./header";
 import Footer from "./footer";
 import { User } from "@/components/type/user";
+import DetailProduct from "@/components/product/DetailProduct";
 
 interface contextProps {
     user: User,
@@ -71,6 +72,7 @@ const Layout: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         <LayoutContext.Provider value={value}>
             <Header />
             {children}
+            <DetailProduct/>
             <Footer />
         </LayoutContext.Provider>
     )

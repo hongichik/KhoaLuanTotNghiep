@@ -14,10 +14,16 @@ class ProductController extends Controller
         $discountedProducts = $product->getDiscountedProducts();
         return $discountedProducts;
     }
-    
+
     public function index(Request $request)
     {
         $products = new Product();
         return $products->getProducts(30,$request['page'],true);
+    }
+
+    public function detailProduct($slug)
+    {
+        $product = new Product();
+        return $product->getProduct($slug);
     }
 }

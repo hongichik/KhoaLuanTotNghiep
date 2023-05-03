@@ -51,7 +51,7 @@ const Category = () => {
             >
                 {categories?.map((data: any, index: any) => (
                     <SwiperSlide key={index} className='last:border-r-0 border-r h-11'>
-                        <Link href={data.slug} key={index} className=' md:w-full md:first:pb-1 md:last:pt-1 md:last:pl-0 md:first:pr-0 md:px-0  last:pl-1 first:pr-1 '>
+                        <Link href={"/category/"+data.slug} key={index} className=' md:w-full md:first:pb-1 md:last:pt-1 md:last:pl-0 md:first:pr-0 md:px-0  last:pl-1 first:pr-1 '>
                             <Image
                                 className='h-full w-full object-cover'
                                 src={process.env.API_HOST + 'storage/' + data.image} alt={data.name}

@@ -1,9 +1,13 @@
 const MoneyConvert = (data:number) =>{
-    return (data).toLocaleString('vi-VN');
+    const intValue = Math.floor(data);
+    return intValue.toLocaleString('vi-VN');
 }
-
+const JsonConvert = (data:any) => {
+    return JSON.stringify(data).replace(/[{}"]/g, '') 
+}
 const Convert = {
-    MoneyConvert
+    MoneyConvert,
+    JsonConvert
 }
 
 export default Convert

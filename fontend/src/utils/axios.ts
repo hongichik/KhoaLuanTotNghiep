@@ -30,7 +30,7 @@ class AxiosClass {
     async get(url:string, query?:any) {
         try {
             const response = await this.$axios.get(url, { params: query });
-            return response.data.data;
+            return response.data;
         } catch (error) {
             return false;
         }

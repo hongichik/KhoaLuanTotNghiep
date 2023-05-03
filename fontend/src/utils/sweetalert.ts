@@ -15,8 +15,9 @@ const AlertSuccess = (title = "Thông báo", text = "", time = 2000) => {
   })
 }
 
-const AlertQRATM = (info_pay:string) => {
-  const payURL = "https://img.vietqr.io/image/MB-0918447062-qr_only.png?amount=10000&addInfo=" + info_pay + "&accountName=PHAM%20NGUYEN%20HONG";
+const AlertQRATM = (info_pay:string,money:number) => {
+  const payURL = "https://img.vietqr.io/image/MB-0918447062-qr_only.png?amount="+money+"&addInfo=" + info_pay + "&accountName=PHAM%20NGUYEN%20HONG";
+  console.log(payURL);
   return Swal.fire({
     html: `      
     <div className="text-base flex flex-col w-24">

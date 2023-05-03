@@ -23,6 +23,9 @@ const TablePayProduct: React.FC<ListProductProps> = ({ ListProducts }) => {
                             Số lượng
                         </th>
                         <th scope="col" className="px-6 py-3">
+                            Đơn giá
+                        </th>
+                        <th scope="col" className="px-6 py-3">
                             Tổng giá
                         </th>
                         <th scope="col" className="px-6 py-3">
@@ -42,10 +45,32 @@ const TablePayProduct: React.FC<ListProductProps> = ({ ListProducts }) => {
                                 {item.qty}
                             </td>
                             <td className="px-6 py-4">
-                                {Convert.MoneyConvert(item.price * item.qty)} đ
+                                <div className='flex'>
+                                    <div className='flex flex-col'>
+                                        <p>
+                                            {Convert.MoneyConvert(item.price - item.price * item.discount / 100)}đ
+                                        </p>
+                                        {
+                                            (item.discount > 0) &&
+                                            <p className='line-through'>
+                                                {Convert.MoneyConvert(item.price)}đ
+                                            </p>
+                                        }
+                                    </div>
+                                    {
+                                        (item.discount > 0) &&
+                                        <p className='ml-2 my-auto text-red-600'>
+                                            Giảm {item.discount}%
+                                        </p>
+
+                                    }
+                                </div>
                             </td>
                             <td className="px-6 py-4">
-                                {typeof item.detail === 'string' && (item.detail == '' ? "Tất cả loại sản phẩm": item.detail )}
+                            {Convert.MoneyConvert((item.price - item.price * item.discount / 100) * item.qty)}đ
+                            </td>
+                            <td className="px-6 py-4">
+                                {typeof item.detail === 'string' && (item.detail == '' ? "Tất cả loại sản phẩm" : item.detail)}
                             </td>
                             <td className="px-6 py-4">
                                 <button onClick={() => btnDeleteProduct(item)} className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800">

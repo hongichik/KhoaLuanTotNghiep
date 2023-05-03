@@ -6,10 +6,12 @@ import Image from 'next/image';
 import { MenuPC, MenuMobile } from './menu';
 import Search from './search';
 import { User } from './user';
+import { useRouter } from 'next/router';
 
 
 export default function Home() {
   const [navbar, setNavbar] = useState(false);
+  const router = useRouter();
   return (
     <div>
       <Head>
@@ -34,7 +36,7 @@ export default function Home() {
             </div>
             <div className='flex flex-grow-1 border-l  border-gray-400 pl-8'>
               <Search className="" />
-              <IconNavbar onClick={() => console.log("oke")} src="/icon/cart_icon.svg" alt="Icon cart" />
+              <IconNavbar onClick={() => router.push('/cart')} src="/icon/cart_icon.svg" alt="Icon cart" />
               <User />
             </div>
           </div>

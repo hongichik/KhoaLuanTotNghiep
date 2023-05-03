@@ -14,7 +14,7 @@ class CartController extends Controller
       $request->validate([
          'count' => 'required',
      ]);
- 
+
       $cart = Cart::where('product_id', $id)
          ->where('user_id', Auth::guard('sanctum')->user()->id)
          ->first();
@@ -39,5 +39,11 @@ class CartController extends Controller
       return Cart::where('product_id', $id)
       ->where('user_id', Auth::guard('sanctum')->user()->id)
       ->delete();
+   }
+
+   public function getCart()
+   {
+      $cart = new Cart();
+      return $cart->getCart();
    }
 }
