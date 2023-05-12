@@ -29,7 +29,7 @@ const Register = async (data: FormData) => {
 }
     const CheckLogin = async () => {
 
-        const result = await Axios.post('api/checkUser', {});
+        const result = await Axios.post('api/checkUser');
         if (result.error || !result) {
             Cookie.RemoveCookie('accessToken');
             return false;
@@ -42,7 +42,7 @@ const Register = async (data: FormData) => {
 
 
 const Logout = async () => {
-    const data = await Axios.post('api/logout', {});
+    const data = await Axios.post('api/logout');
     if (data.status === "success") {
         Cookie.RemoveCookie('accessToken');
         return true;

@@ -41,9 +41,8 @@ services:
     build:
       context: ../docker/php
     container_name: backend_${APP_NAME}
-    # ports:
-    #   - "9000:9000"
-    # command: php artisan serve --host=0.0.0.0 --port=8000
+    ports:
+      - "9000:9000"
     volumes:
       - ../backend:/var/www/html/BE
       - ../docker/php/php.ini:/etc/php8/php.ini
@@ -59,9 +58,9 @@ services:
       - ../backend:/var/www/html/BE
       - ../fontend:/var/www/html/FE
       - ../node:/var/www/html/NODE
-    # ports:
-    #   - "3000:3000"
-    #   - "3001:3001"
+    ports:
+      - "3000:3000"
+      - "3001:3001"
     command: sh -c "cd /var/www/html/FE && npm run dev & cd /var/www/html/NODE && npm start"
     working_dir: /var/www/html
     links:
