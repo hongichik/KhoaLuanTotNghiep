@@ -41,8 +41,8 @@ services:
     build:
       context: ../docker/php
     container_name: backend_${APP_NAME}
-    ports:
-      - "9000:9000"
+    # ports:
+    #   - "9000:9000"
     volumes:
       - ../backend:/var/www/html/BE
       - ../docker/php/php.ini:/etc/php8/php.ini
@@ -53,15 +53,15 @@ services:
   npm:
     image: node:16.14-alpine3.15
     container_name: npm_fontend
-    # command: tail -f /dev/null
+    command: tail -f /dev/null
     volumes:
       - ../backend:/var/www/html/BE
       - ../fontend:/var/www/html/FE
       - ../node:/var/www/html/NODE
-    ports:
-      - "3000:3000"
-      - "3001:3001"
-    command: sh -c "cd /var/www/html/FE && npm run dev & cd /var/www/html/NODE && npm start"
+    # ports:
+    #   - "3000:3000"
+    #   - "3001:3001"
+    # command: sh -c "cd /var/www/html/FE && npm run dev & cd /var/www/html/NODE && npm start"
     working_dir: /var/www/html
     links:
       - php_khoa_luan
@@ -75,6 +75,9 @@ services:
     ports:
       - "80:80"
       - "443:443"
+      - "3001:3001"
+      - "3002:3002"
+      - "3003:3003"
     environment:
       - CERT_PASS=test
     volumes:
