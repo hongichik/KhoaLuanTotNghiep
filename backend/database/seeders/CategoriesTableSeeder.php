@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Category;
+use Illuminate\Support\Facades\DB;
 use TCG\Voyager\Models\DataRow;
 use TCG\Voyager\Models\DataType;
 use TCG\Voyager\Models\Menu;
@@ -193,110 +194,118 @@ class CategoriesTableSeeder extends Seeder
         //Permissions
         Permission::generateFor('categories');
 
-        //Content
-        $category = Category::firstOrNew([
-            'slug' => 'category-1',
-        ]);
-        if (!$category->exists) {
-            $category->fill([
-                'name' => 'Category 1',
-                'image' => 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
-            ])->save();
-        }
 
-        $category = Category::firstOrNew([
-            'slug' => 'category-2',
-        ]);
-        if (!$category->exists) {
-            $category->fill([
-                'name' => 'Category 2',
-                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
-            ])->save();
-        }
+        $file = base_path('database/seeders/sql/categories.sql');
 
-        $category = Category::firstOrNew([
-            'slug' => 'category-3',
-        ]);
-        if (!$category->exists) {
-            $category->fill([
-                'name' => 'Category 3',
-                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
-            ])->save();
-        }
+        if (file_exists($file)) {
+            $sql = file_get_contents($file);
+            DB::unprepared($sql);
+        } else {
+            //Content
+            $category = Category::firstOrNew([
+                'slug' => 'category-1',
+            ]);
+            if (!$category->exists) {
+                $category->fill([
+                    'name' => 'Category 1',
+                    'image' => 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+                ])->save();
+            }
 
-        $category = Category::firstOrNew([
-            'slug' => 'category-4',
-        ]);
-        if (!$category->exists) {
-            $category->fill([
-                'name' => 'Category 4',
-                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
-            ])->save();
-        }
-        $category = Category::firstOrNew([
-            'slug' => 'category-5',
-        ]);
-        if (!$category->exists) {
-            $category->fill([
-                'name' => 'Category 5',
-                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
-            ])->save();
-        }
-        $category = Category::firstOrNew([
-            'slug' => 'category-6',
-        ]);
-        if (!$category->exists) {
-            $category->fill([
-                'name' => 'Category 6',
-                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
-            ])->save();
-        }
-        $category = Category::firstOrNew([
-            'slug' => 'category-7',
-        ]);
-        if (!$category->exists) {
-            $category->fill([
-                'name' => 'Category 7',
-                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
-            ])->save();
-        }
-        $category = Category::firstOrNew([
-            'slug' => 'category-8',
-        ]);
-        if (!$category->exists) {
-            $category->fill([
-                'name' => 'Category 8',
-                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
-            ])->save();
-        }
-        $category = Category::firstOrNew([
-            'slug' => 'category-9',
-        ]);
-        if (!$category->exists) {
-            $category->fill([
-                'name' => 'Category 9',
-                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
-            ])->save();
-        }
+            $category = Category::firstOrNew([
+                'slug' => 'category-2',
+            ]);
+            if (!$category->exists) {
+                $category->fill([
+                    'name' => 'Category 2',
+                    'image' => 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+                ])->save();
+            }
 
-        $category = Category::firstOrNew([
-            'slug' => 'category-10',
-        ]);
-        if (!$category->exists) {
-            $category->fill([
-                'name' => 'Category 10',
-                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
-            ])->save();
-        }
+            $category = Category::firstOrNew([
+                'slug' => 'category-3',
+            ]);
+            if (!$category->exists) {
+                $category->fill([
+                    'name' => 'Category 3',
+                    'image' => 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+                ])->save();
+            }
 
-        $category = Category::firstOrNew([
-            'slug' => 'category-11',
-        ]);
-        if (!$category->exists) {
-            $category->fill([
-                'name' => 'Category 11',
-                'image'=> 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
-            ])->save();
+            $category = Category::firstOrNew([
+                'slug' => 'category-4',
+            ]);
+            if (!$category->exists) {
+                $category->fill([
+                    'name' => 'Category 4',
+                    'image' => 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+                ])->save();
+            }
+            $category = Category::firstOrNew([
+                'slug' => 'category-5',
+            ]);
+            if (!$category->exists) {
+                $category->fill([
+                    'name' => 'Category 5',
+                    'image' => 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+                ])->save();
+            }
+            $category = Category::firstOrNew([
+                'slug' => 'category-6',
+            ]);
+            if (!$category->exists) {
+                $category->fill([
+                    'name' => 'Category 6',
+                    'image' => 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+                ])->save();
+            }
+            $category = Category::firstOrNew([
+                'slug' => 'category-7',
+            ]);
+            if (!$category->exists) {
+                $category->fill([
+                    'name' => 'Category 7',
+                    'image' => 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+                ])->save();
+            }
+            $category = Category::firstOrNew([
+                'slug' => 'category-8',
+            ]);
+            if (!$category->exists) {
+                $category->fill([
+                    'name' => 'Category 8',
+                    'image' => 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+                ])->save();
+            }
+            $category = Category::firstOrNew([
+                'slug' => 'category-9',
+            ]);
+            if (!$category->exists) {
+                $category->fill([
+                    'name' => 'Category 9',
+                    'image' => 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+                ])->save();
+            }
+
+            $category = Category::firstOrNew([
+                'slug' => 'category-10',
+            ]);
+            if (!$category->exists) {
+                $category->fill([
+                    'name' => 'Category 10',
+                    'image' => 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+                ])->save();
+            }
+
+            $category = Category::firstOrNew([
+                'slug' => 'category-11',
+            ]);
+            if (!$category->exists) {
+                $category->fill([
+                    'name' => 'Category 11',
+                    'image' => 'categories/April2023/gI6eVP5FGPudfvdYNiyU.png'
+                ])->save();
+            }
         }
     }
 

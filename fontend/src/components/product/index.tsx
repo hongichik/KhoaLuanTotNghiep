@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import CartAPI from '../../pages/api/CartAPI';
+import CartAPI from '../api/CartAPI';
 import ProductType from "../type/ProductType";
 import DetailProduct from "./DetailProduct";
 import { useLayoutContext } from '../../layouts/index';
@@ -28,6 +28,7 @@ const Product: React.FC<ProductProps> = ({ product}) => {
         if(!auth)
         {
             router.push('/auth/login');
+            return;
         }
         if(!selectCart)
         {
@@ -45,7 +46,7 @@ const Product: React.FC<ProductProps> = ({ product}) => {
             <Image
                 src={process.env.API_HOST + 'storage/' + product.main_image}
                 loader={() => process.env.API_HOST + 'storage/' + product.main_image}
-                alt={product.title} width={200} height={200} className='rounded-t-lg image-1-1' />
+                alt={product.title} width={400} height={400} className='rounded-t-lg image-1-1' />
             <Link href={"/product/"+product.slug} >
                 <div className="p-3 pt-1">
                     <p className="truncate line-clamp-2 whitespace-pre-wrap w-full  h-12">{product.title}</p>

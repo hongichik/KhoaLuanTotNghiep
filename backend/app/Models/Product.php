@@ -59,12 +59,44 @@ class Product extends Model
         return $products;
     }
 
-    public function getProducts($perPage = 30, $page = 1, $withCart = true)
+    public function getProducts($perPage = 30, $request, $withCart = true)
     {
-        $query = self::where('discount', '!=', 0)
-            ->orderBy('created_at', 'desc')
-            ->paginate($perPage, ['*'], 'page', $page);
+        // dd($request['page']);
+        if (isset($request['perPage'])) {
+            $perPage = $request['perPage'];
+        }
+        $page = $request['page'] ?? 1;
+        $order = $request['order'] ?? 0;
+        $categoryRequet = explode(",", $request['category']);
+        $arrayCategory = Category::whereIn('slug', array_map("urldecode", $categoryRequet))->pluck('id')->toArray();
+        $query = $this::where('discount', '!=', 0);
+        if (count($arrayCategory) > 0) {
+            $query = $query->whereIn('category_id', $arrayCategory);
+        }
+        if ($order == 0) {
+            $query = $query->orderBy('created_at', 'DESC');
+        }
+        if ($order == 1) {
+            $query = $query->orderByRaw('(price - (price * (discount / 100))) ASC');
+        }
+
+        if ($order == 2) {
+            $query = $query->orderByRaw('(price - (price * (discount / 100))) DESC');
+        }
+
+        if (isset($request['from']) && $request['from'] != "") {
+            $query = $query->where('price', '>=', $request['from']);
+        }
+        if (isset($request['to']) && $request['to'] != "") {
+            $query = $query->where('price', '<=', $request['to']);
+        }
+        if (isset($request['search'])) {
+            $query = $query->where('title',  'LIKE', "%{$request['search']}%");
+        }
+
+        $query = $query->paginate($perPage, ['*'], 'page', $page);
         $products = $query->items();
+
 
         // Thêm thông tin cart cho từng sản phẩm
         if ($withCart && Auth::guard('sanctum')->check()) {
@@ -88,14 +120,30 @@ class Product extends Model
             }
         }
 
+        $sumPage = ceil($query->total() / $query->perPage());
+        $previousPage = $query->currentPage() - 1;
+        if ($query->currentPage() == $sumPage) {
+            $nextPage = 0;
+        } else {
+            $nextPage = $query->currentPage() + 1;
+        }
+
+        $from = ($query->currentPage() - 1) * $query->perPage();
+        if ($from <= 0)
+            $from = 1;
+        $to = $from + $query->perPage() - 1;
+        if ($to > $query->total())
+            $to = $query->total();
         // Thêm thông tin phân trang
         $pagination = [
             'total' => $query->total(),
+            'from' => $from,
+            'to' => $to,
             'per_page' => $query->perPage(),
             'current_page' => $query->currentPage(),
             'last_page' => $query->lastPage(),
-            'prev_page_url' => $query->previousPageUrl(),
-            'next_page_url' => $query->nextPageUrl(),
+            'prev_page_url' => $previousPage,
+            'next_page_url' => $nextPage,
         ];
 
         return [
@@ -106,9 +154,9 @@ class Product extends Model
 
     public function getProduct($slug)
     {
-         $product = Product::where('slug',$slug)->first();
-         $product->images = json_decode($product->images);
-         $product->detail = json_decode($product->detail);
-         return $product;
+        $product = Product::where('slug', $slug)->first();
+        $product->images = json_decode($product->images);
+        $product->detail = json_decode($product->detail);
+        return $product;
     }
 }

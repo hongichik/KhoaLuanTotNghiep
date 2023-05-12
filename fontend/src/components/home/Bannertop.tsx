@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import advertisementAPI from '@/pages/api/advertisementAPI';
+import advertisementAPI from '@/components/api/advertisementAPI';
 import { Pagination, Autoplay } from "swiper";
 import Image from 'next/image';
 import Link from 'next/link';

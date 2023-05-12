@@ -124,9 +124,9 @@ class AuthController extends Controller
         if (!$request->bearerToken()) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
-        
+
         $request->user()->currentAccessToken()->delete();
-        
+
         return response()->json([
             'status' => 'success',
             'message' => 'Successfully logged out',

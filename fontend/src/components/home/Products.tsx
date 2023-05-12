@@ -1,4 +1,4 @@
-import ProductAPI from "@/pages/api/ProductAPI";
+import ProductAPI from "@/components/api/ProductAPI";
 import { RootState } from "@/reducers";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";

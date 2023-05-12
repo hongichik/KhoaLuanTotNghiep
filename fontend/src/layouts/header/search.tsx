@@ -1,4 +1,5 @@
 import { IconNavbar } from "@/components/icon/icon";
+import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 
 
@@ -6,6 +7,7 @@ const Search = ({ className }: { className: string }) => {
     const [drop, setDrop] = useState(false);
     const searchRef = useRef<HTMLInputElement>(null);
     const dropdownRef = useRef<HTMLDivElement | null>(null);
+    const router = useRouter();
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -21,7 +23,11 @@ const Search = ({ className }: { className: string }) => {
 
     const handlerSubmit = (event: React.FormEvent<HTMLFormElement>) =>{
         event.preventDefault();
-        // console.log(searchRef.current?.value);
+        router.push({
+            pathname: '/product',
+            query: {search: searchRef.current?.value},
+        });
+        setDrop(false);
     }
     return (
         <div ref={dropdownRef} className={`relative flex` + className}>

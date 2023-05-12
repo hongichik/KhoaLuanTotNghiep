@@ -3,17 +3,25 @@ import Convert from '@/utils/convert';
 import SweetAlert from '@/utils/sweetalert';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import CartAPI from '../api/CartAPI';
+import CartAPI from '../../components/api/CartAPI';
 import { useDispatch } from 'react-redux';
 import { AddProduct } from '../../actions/PayProductAction';
 import ProductType from '@/components/type/ProductType';
 import { useRouter } from 'next/router';
+import { useLayoutContext } from '../../layouts/index';
 const Cart = () => {
     const [cart, setCart] = useState<CartType[]>();
     const dispatch = useDispatch();
     const router = useRouter();
+    const user = useLayoutContext();
     const getCart = async () => {
+        if(!user?.user.login && user?.user.login != null)
+        {
+            router.push('/auth/login');
+            return;
+        }
         const data = await CartAPI.getCart();
+
         if (data) {
             setCart(data);
         }

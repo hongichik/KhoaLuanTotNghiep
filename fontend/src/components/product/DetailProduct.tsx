@@ -9,7 +9,7 @@ import "swiper/css/effect-cube";
 import "swiper/css/pagination";
 import { Autoplay, EffectCube, Pagination } from "swiper";
 import { DetailTypleProduct } from '../type/ProductType';
-import CartAPI from '@/pages/api/CartAPI';
+import CartAPI from '@/components/api/CartAPI';
 import { useRouter } from 'next/router';
 import { AddProduct } from '@/actions/PayProductAction';
 

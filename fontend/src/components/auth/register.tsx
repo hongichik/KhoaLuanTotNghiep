@@ -1,4 +1,4 @@
-import AuthAPI from "@/pages/api/authAPI";
+import AuthAPI from "@/components/api/authAPI";
 import Image from "next/image";
 import { useEffect, useState } from 'react';
 import Dropzone from 'react-dropzone';

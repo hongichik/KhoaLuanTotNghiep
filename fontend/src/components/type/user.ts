@@ -4,5 +4,5 @@ export interface User {
     id?: Number,
     address?:string,
     phone?:string,
-    login: boolean,
+    login: boolean|null,
 }

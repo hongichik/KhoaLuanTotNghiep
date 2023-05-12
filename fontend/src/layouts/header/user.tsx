@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { IconNavbar } from "@/components/icon/icon";
-import AuthAPI from '../../pages/api/authAPI';
+import AuthAPI from '../../components/api/authAPI';
 import { useLayoutContext } from '../index';
 
 
@@ -61,12 +61,18 @@ export const User = () => {
             }
 
             {drop &&
-                <div className="!top-12 !right-3 dropMenu ">
+                <div className="!top-12 !right-3 dropMenu z-50">
                     <div className="flex  flex-col">
-                        <p  className='pl-6 pr-7 py-2 flex border-b-2'>
+                        <p  className='pl-6 pr-7 py-2 cursor-default flex border-b-2 mx-auto w-full justify-center'>
                             {user?.user.name}
                             <IconNavbar src="/icon/user_icon.svg" alt="icon" />
                         </p>
+                        <Link href={'/notification'}>
+                        <p  className='pl-6 pr-7 py-2 flex border-b-2 hover:bg-slate-100'>
+                            Quản lý chung
+                            <IconNavbar src="/icon/Setting_icon.svg" alt="icon" />
+                        </p>
+                        </Link>
                         <p onClick={logout} className='pl-6 pr-3 py-2 hover:bg-slate-100 justify-center cursor-pointer flex'>
                             Đăng xuất
                             <IconNavbar src="/icon/logout_icon.svg" alt="icon" />

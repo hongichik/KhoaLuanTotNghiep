@@ -8,9 +8,12 @@ use App\Http\Controllers\API\AdvertisementController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\BlockChainController;
 use App\Http\Controllers\API\CartController;
 use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\API\CommentController;
 use App\Http\Controllers\API\MenuCoontroller;
+use App\Http\Controllers\API\NotificationController;
 use App\Http\Controllers\API\PayController;
 use App\Http\Controllers\API\ProductController;
 use Illuminate\Support\Facades\Hash;
@@ -40,6 +43,19 @@ Route::middleware(['ForceJson'])->group(function () {
         });
         Route::prefix('/pay')->group(function () {
             Route::post('/create', [PayController::class, 'create']);
+            Route::post('/get', [PayController::class, 'get']);
+        });
+
+        Route::prefix('/comment')->group(function () {
+            Route::post('/create', [CommentController::class, 'create']);
+        });
+
+        Route::prefix('/notification')->group(function () {
+            Route::post('/', [NotificationController::class, 'index']);
+        });
+
+        Route::prefix('/blockchain')->group(function () {
+            Route::post('/', [BlockChainController::class, 'index']);
         });
     });
     Route::controller(AuthController::class)->group(function () {
@@ -59,10 +75,10 @@ Route::middleware(['ForceJson'])->group(function () {
         Route::post('', [ProductController::class, 'index']);
     });
 
-
+    Route::prefix('/comment')->group(function () {
+        Route::get('/{id}', [CommentController::class, 'index']);
+    });
 });
 
-Route::get('/test', function ()
-{
-    return Hash::make("U2FsdGVkX1/DO44Jhmoub0U0c2wOwcrK8U09pGIxPFNaZHfwdjH1PymOZRlV8vcxaqBV0mZNFPXofxXkJ+xIZQ==");
-});
+
+

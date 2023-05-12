@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\voyager\Controllers\Custom\PayController;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
 
@@ -21,4 +22,5 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+    Route::get('/pays/status/{id}/{status}',[PayController::class,'status']);
 });

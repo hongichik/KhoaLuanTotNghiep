@@ -45,7 +45,7 @@ const Logout = async () => {
     const data = await Axios.post('api/logout', {});
     if (data.status === "success") {
         Cookie.RemoveCookie('accessToken');
-        return;
+        return true;
     }
     return false;
 }

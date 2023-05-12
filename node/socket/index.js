@@ -1,5 +1,5 @@
 import setupComment from "./rooms/comment.js";
-import setupRoom2 from "./rooms/room2.js";
+import setupRoomNotification from "./rooms/notification.js";
 import { Server } from "socket.io";
 
 export default function (http) {
@@ -10,7 +10,7 @@ export default function (http) {
   });
 
   setupComment(io);
-  setupRoom2(io);
+  setupRoomNotification(io);
 
   io.on("connection", function (socket) {
     console.log("a user connected");

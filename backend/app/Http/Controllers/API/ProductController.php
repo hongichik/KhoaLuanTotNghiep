@@ -18,7 +18,7 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $products = new Product();
-        return $products->getProducts(30,$request['page'],true);
+        return $products->getProducts(30,$request,true);
     }
 
     public function detailProduct($slug)

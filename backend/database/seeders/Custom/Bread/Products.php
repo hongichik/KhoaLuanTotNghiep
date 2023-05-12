@@ -154,7 +154,7 @@ if (!$dataRow->exists) {
     $dataRow->fill([
         'type'         => 'number',
         'display_name' => 'order',
-        'required'     => 1,
+        'required'     => 0,
         'browse'       => 1,
         'read'         => 1,
         'edit'         => 1,
@@ -164,7 +164,20 @@ if (!$dataRow->exists) {
     ])->save();
 }
 
-
+$dataRow = $this->dataRow($dataType, 'category_id');
+if (!$dataRow->exists) {
+    $dataRow->fill([
+        'type'          => 'text',
+        'display_name'  => 'Description',
+        'required'      => 0,
+        'browse'        => 0,
+        'read'          => 1,
+        'edit'          => 1,
+        'add'           => 1,
+        'delete'        => 0,
+        'order'         => 8,
+    ])->save();
+}
 $dataRow = $this->dataRow($dataType, 'product_belongsto_category_relationship');
 if (!$dataRow->exists) {
     $dataRow->fill([
@@ -190,8 +203,22 @@ if (!$dataRow->exists) {
         ],
     ])->save();
 }
+$dataRow = $this->dataRow($dataType, 'short_description');
+if (!$dataRow->exists) {
+    $dataRow->fill([
+        'type'          => 'text',
+        'display_name'  => 'Description',
+        'required'      => 0,
+        'browse'        => 0,
+        'read'          => 1,
+        'edit'          => 1,
+        'add'           => 1,
+        'delete'        => 0,
+        'order'         => 8,
+    ])->save();
+}
 
-$dataRow = $this->dataRow($dataType, 'description');
+$dataRow = $this->dataRow($dataType, 'detail_description');
 if (!$dataRow->exists) {
     $dataRow->fill([
         'type'          => 'rich_text_box',

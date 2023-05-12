@@ -25,10 +25,10 @@ class PayRequest extends ApiRequest
     public function rules()
     {
         return [
-            'product_id' => 'required|integer',
-            'count' => 'required|integer',
-            'status' => 'required|boolean',
-            'type'=> 'required|boolean',
+            'product_id.*' => 'required|integer',
+            'count.*' => 'required|integer',
+            'status.*' => 'required|boolean',
+            'type.*'=> 'required|boolean',
         ];
     }
 }

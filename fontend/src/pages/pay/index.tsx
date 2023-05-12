@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useLayoutContext } from '../../layouts/index';
 import Convert from '../../utils/convert';
 import { useRouter } from 'next/router';
-import PayAPI from "../api/PayAPI";
+import PayAPI from "../../components/api/PayAPI";
 import { DeleteAllProduct } from '../../actions/PayProductAction';
 import SweetAlert from '../../utils/sweetalert';
 export default function Pay() {
@@ -34,30 +34,26 @@ export default function Pay() {
 
   const btnPay = async () => {
     let isSuccess = true;
+    var formData = new FormData();
     for (const item of listProduct) {
-      try {
-        var formData = new FormData();
-        formData.append('product_id', String(item.id));
-        formData.append('count', String(item.qty));
-        formData.append('status', "0");
-        formData.append('detail', String(item.detail));
-        formData.append('type', "0");
-        formData.append('info_pay', info_pay);
-        formData.append('phone', String(userInfo?.user.phone));
-        formData.append('address', String(userInfo?.user.address));
-
-        const data = await PayAPI.createPay(formData);
-        if (!data) {
-          isSuccess = false;
-          break;
-        }
-      } catch (error) {
-        isSuccess = false;
-        console.error(error);
-        break;
-      }
+      formData.append('product_id[]', String(item.id));
+      formData.append('count[]', String(item.qty));
+      formData.append('status[]', "0");
+      formData.append('detail[]', String(item.detail));
+      formData.append('type[]', "0");
+      formData.append('info_pay[]', info_pay);
+      formData.append('phone[]', String(userInfo?.user.phone));
+      formData.append('address[]', String(userInfo?.user.address));
     }
-
+    try {
+      const data = await PayAPI.createPay(formData);
+      if (!data) {
+        isSuccess = false;
+      }
+    } catch (error) {
+      isSuccess = false;
+      console.error(error);
+    }
     if (isSuccess) {
       SweetAlert.AlertSuccess("Thông báo", "Đặt hàng hành công", 1000);
       dispatch(deleteAllProduct);
@@ -70,35 +66,32 @@ export default function Pay() {
 
 
   const btnPayATM = async () => {
-    const check = await SweetAlert.AlertQRATM(info_pay,sumPrice);
+    const check = await SweetAlert.AlertQRATM(info_pay, sumPrice);
     if (!check) {
       return;
     }
     let isSuccess = true;
-    
+    var formData = new FormData();
     for (const item of listProduct) {
-      try {
-        var formData = new FormData();
-        formData.append('product_id', String(item.id));
-        formData.append('count', String(item.qty));
-        formData.append('status', "0");
-        formData.append('detail', String(item.detail));
-        formData.append('type', "1");
-        formData.append('info_pay', info_pay);
-        formData.append('phone', String(userInfo?.user.phone));
-        formData.append('address', String(userInfo?.user.address));
-        const data = await PayAPI.createPay(formData);
-        if (!data) {
-          isSuccess = false;
-          break;
-        }
-      } catch (error) {
-        isSuccess = false;
-        console.error(error);
-        break;
-      }
+        formData.append('product_id[]', String(item.id));
+        formData.append('count[]', String(item.qty));
+        formData.append('status[]', "0");
+        formData.append('detail[]', String(item.detail));
+        formData.append('type[]', "1");
+        formData.append('info_pay[]', info_pay);
+        formData.append('phone[]', String(userInfo?.user.phone));
+        formData.append('address[]', String(userInfo?.user.address));
     }
-
+    formData.append('sumPrice',String(sumPrice));
+    try {
+      const data = await PayAPI.createPay(formData);
+      if (!data) {
+        isSuccess = false;
+      }
+    } catch (error) {
+      isSuccess = false;
+      console.error(error);
+    }
     if (isSuccess) {
       SweetAlert.AlertSuccess("Thông báo", "Đặt hàng hành công", 1000);
       dispatch(deleteAllProduct);

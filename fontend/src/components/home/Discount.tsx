@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import ProductAPI from '../../pages/api/ProductAPI';
+import ProductAPI from '../api/ProductAPI';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";

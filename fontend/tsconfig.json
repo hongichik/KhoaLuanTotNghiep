@@ -18,6 +18,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/store/store.ts", "src/utils/jwt.js", "src/utils/SocketIo.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/store/store.ts", "src/utils/jwt.js", "src/utils/SocketIo/SocketIoProduct.ts"],
   "exclude": ["node_modules"]
 }

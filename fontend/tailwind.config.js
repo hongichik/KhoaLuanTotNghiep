@@ -36,6 +36,9 @@ module.exports = {
       },
       width: {
         '500px': '500px'
+      },
+      maxHeight: {
+        "80vh": "80vh",
       }
     },
   },

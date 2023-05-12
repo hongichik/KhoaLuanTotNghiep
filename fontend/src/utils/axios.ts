@@ -36,7 +36,7 @@ class AxiosClass {
         }
     }
 
-    async post(url:string, data?:any) {
+    async post(url:string, data?:FormData) {
         try {
             const response = await this.$axios.post(url, data);
 

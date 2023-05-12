@@ -1,6 +1,6 @@
 "use strict";
 
-import ProductsController from "./controllers/ProductsController.js";
+import SocketController from "./controllers/SocketController.js";
 
 export default function routes(app) {
   // todoList Routes
@@ -8,11 +8,5 @@ export default function routes(app) {
     
     res.sendFile(new URL('./index.html', import.meta.url).pathname);
   });
-  app.route("/products").get(ProductsController.get);
-  //   .post(productsCtrl.store);
-
-  // app.route('/products/:productId')
-  //   .get(productsCtrl.detail)
-  //   .put(productsCtrl.update)
-  //   .delete(productsCtrl.delete);
+  app.route("/products").post(SocketController.post);
 };

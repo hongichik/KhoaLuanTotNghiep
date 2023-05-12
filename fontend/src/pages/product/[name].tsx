@@ -1,6 +1,6 @@
 import ProductType from '@/components/type/ProductType';
 import { useEffect, useState } from 'react';
-import ProductAPI from '../api/ProductAPI';
+import ProductAPI from '../../components/api/ProductAPI';
 import { hideProduct } from '@/actions/DetailProductAction';
 import Image from 'next/image';
 import { useSelector, useDispatch } from 'react-redux';
@@ -11,11 +11,12 @@ import "swiper/css/effect-cube";
 import "swiper/css/pagination";
 import { Autoplay, EffectCube, Pagination } from "swiper";
 import { DetailTypleProduct } from '@/components/type/ProductType';
-import CartAPI from '@/pages/api/CartAPI';
+import CartAPI from '@/components/api/CartAPI';
 import { useRouter } from 'next/router';
 import { AddProduct } from '@/actions/PayProductAction';
 import SweetAlert from '../../utils/sweetalert';
-import SocketIo from '../../utils/SocketIo';
+import SocketIo from '../../utils/SocketIo/SocketIoProduct';
+import CommentProduct from '@/components/comment/CommentProduct';
 
 
 interface TypeState {
@@ -26,6 +27,7 @@ const ProductDetail = () => {
     const { name } = router.query;
     const [product, setProduct] = useState<ProductType | null>(null);
     const payProduct = useSelector((state: RootState) => state.PayProductReducer.products);
+    const [eye, setEye] = useState(1);
     const [type, setType] = useState<TypeState>({});
     const dispatch = useDispatch();
     const [count, setCount] = useState(1);
@@ -84,14 +86,17 @@ const ProductDetail = () => {
             setShow(true);
     }
     useEffect(() => {
-        
-        if(name)
-        {
-            SocketIo.SocketComment(String(name));
+
+        if (name) {
             getDataProduct();
         }
-        
+
     }, [name])
+    useEffect(() => {
+        if (product) {
+            SocketIo.connect(product?.id, setEye);
+        }
+    }, [product])
     if (show) {
         return (
             <div className="flex justify-center items-center h-screen">
@@ -104,9 +109,9 @@ const ProductDetail = () => {
     }
     else
         return (
-            <div className="flex container">
+            <div className="flex container flex-col">
                 {product ?
-                    <div className="m-auto w-full bg-white my-14 flex flex-wrap justify-around">
+                    <div className="m-auto w-full bg-white mt-14 mb-3 flex flex-wrap justify-around">
                         <div className='flex w-full md:w-5/12 px-3'>
                             <Swiper
                                 autoplay={{
@@ -142,7 +147,7 @@ const ProductDetail = () => {
                             </Swiper>
                         </div>
                         <div className='w-full md:w-6/12 md:mt-0 mt-12 flex flex-col relative'>
-                            <h1 className='text-2xl  font-medium mb-3'>{product.title}</h1>
+                            <h1 className='text-2xl  font-medium mb-2 pr-12'>{product.title} </h1>
                             <div className='flex'>
                                 <p className="text-sky-700 text-2xl mb-0 mt-auto" >{Math.ceil((product.price - product.price * product.discount / 100)).toLocaleString('vi-VN')} đ</p>
                             </div>
@@ -220,11 +225,20 @@ const ProductDetail = () => {
                                     />
                                 </button>
                             </div>
+                            {eye > 1 &&
+                                <div className='flex w-100 text-sm'>
+                                    <Image className='ml-auto mr-2' src="/icon/eye_2.svg" height={25} width={25} alt="icon" />
+                                    <p className='my-auto'>
+                                        Bạn và {eye - 1} người khác đang xem sản phẩm</p>
+                                </div>
+                            }
+
                         </div>
 
                         <div className='w-full border-t-2 mt-10 px-10'>
                             <p className='text-xl font-medium mt-5'>Mô tả</p>
-                            <p className='text-base'>{product.detail_description}</p>
+                            <p className="text-base" dangerouslySetInnerHTML={{ __html: product.detail_description }}></p>
+
                         </div>
 
                     </div>
@@ -235,6 +249,9 @@ const ProductDetail = () => {
                         </div>
                     </div>
                 }
+                {product && <CommentProduct id={product.id} />}
+
+
 
             </div>
         )

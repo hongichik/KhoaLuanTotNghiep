@@ -1,4 +1,4 @@
-import AuthAPI from "@/pages/api/authAPI";
+import AuthAPI from "@/components/api/authAPI";
 import Image from "next/image";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -19,7 +19,7 @@ const Layout: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         avatar: "",
         name: "",
         id: 0,
-        login: false
+        login: null
     });
     const CheckUser = async () => {
 

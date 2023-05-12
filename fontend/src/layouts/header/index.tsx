@@ -7,6 +7,7 @@ import { MenuPC, MenuMobile } from './menu';
 import Search from './search';
 import { User } from './user';
 import { useRouter } from 'next/router';
+import Notifacation from './Notifacation';
 
 
 export default function Home() {
@@ -37,13 +38,13 @@ export default function Home() {
             <div className='flex flex-grow-1 border-l  border-gray-400 pl-8'>
               <Search className="" />
               <IconNavbar onClick={() => router.push('/cart')} src="/icon/cart_icon.svg" alt="Icon cart" />
+              <Notifacation />
               <User />
             </div>
           </div>
           <div className='lg:hidden flex'>
-            <User />
-            <IconNavbar onClick={() => setNavbar(!navbar)} src="/icon/menu_icon.svg" alt="Icon cart" />
-
+            <IconNavbar onClick={() => router.push('/cart')} src="/icon/cart_icon.svg" alt="Icon cart" />
+            <IconNavbar onClick={() => setNavbar(!navbar)} src="/icon/menu_icon.svg" alt="Icon nav" />
           </div>
           {
             navbar &&

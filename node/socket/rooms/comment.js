@@ -1,32 +1,54 @@
-import AuthAPI from "../../backend/AuthAPI.js";
+import User from "../../model/User.js";
 
 const setupRoom1 = (io) => {
   const room = io.of("/comment");
   room.on("connection", (socket) => {
-    console.log("Có người kết nối tới bình luận : " + socket.id);
-
     socket.on("connectRoom", async (data) => {
-      const info = await AuthAPI.CheckLogin(data.auth);
-      console.log(info);
-      // console.log(data);
-      const slug = data.slug;
-      console.log(socket.id+" vừa tạo phòng: "+slug);
-      socket.join(slug); // Join vào phòng của bài viết 
-      socket.emit("createRoomResponse", { message: "Đã tạo phòng " + slug });
+      const user = await User.auth(data.auth);
+      if (user) {
+        console.log("Người dùng " + user.name + " đã xem sản phẩm");
+      }
+      if (!data.slug) {
+        return;
+      }
+      const slug = String(data.slug);
+      socket.join(slug);
+      const socketIds = await room.in(slug).allSockets();
+      const socketsInRoom = socketIds.size;
+
+      room.to(slug).emit("RoomResponse", {
+        message: `Bạn đã vào phòng ${slug}`,
+        count: socketsInRoom
+      });
+      socket.currentRoom = slug;
     });
 
-    socket.on("comment", (data) => {
-      room.to(data.slug).emit("newComment", { message: data.message });
+    socket.on("comment", async (data) => {
+      const user = await User.auth(data.auth);
+      if (user) {
+        room.to(String(data.slug)).emit("newComment", { message: data.data });
+      }
+      
     });
 
-    socket.on("disconnect", () => {
-      console.log("A user disconnected from room1");
+    socket.on("disconnect", async () => {
+      try {
+        console.log("có người thoát phòng "+socket.currentRoom);
+        const socketIds = await room.in(socket.currentRoom).allSockets();
+        const socketsInRoom = socketIds.size;
+        room.to(socket.currentRoom).emit("RoomResponse", {
+          message: "Đã có người thoát phòng",
+          count: socketsInRoom
+        });
+
+      } catch (error) {
+        console.error(error);
+      }
     });
   });
-}
+};
 
 export default setupRoom1;
-
 
 //socket chi gửi về cho người dùng vừa gửi tin nhắn
 //room gửi cho tất cả

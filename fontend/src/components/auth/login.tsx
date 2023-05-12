@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { useState } from 'react';
-import AuthAPI from "@/pages/api/authAPI";
+import { useState, useEffect } from 'react';
+import AuthAPI from "@/components/api/authAPI";
 import { useRouter } from 'next/router'
 import { User } from "../type/user";
 import { useLayoutContext } from '../../layouts/index';
@@ -31,6 +31,13 @@ const Login = () => {
         else
             setError(!result);
     }
+
+    useEffect(()=>{
+        if(user?.user.login)
+        {
+            router.push('/');
+        }
+    },[user])
     return (
         <form className="w-full flex flex-col" onSubmit={SubmitForm}>
             <div className="relative z-0 w-full mb-6 group">
