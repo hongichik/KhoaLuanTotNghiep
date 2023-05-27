@@ -33,8 +33,10 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
     && php -r "unlink('composer-setup.php');" 
 
+RUN mkdir -p /var/www/html/BE 
+COPY ../../backend /var/www/html/BE
 
-RUN chmod -R 777 /var/www/html/BE
+RUN chmod -R 777 /var/www/html/BE/storage
 
 WORKDIR /var/www/html/BE
 
