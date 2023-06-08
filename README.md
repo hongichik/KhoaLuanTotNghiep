@@ -108,3 +108,6 @@
 
 ## tao key JWT token
 >php artisan jwt:secret
+
+## chay npm
+>docker exec -itd npm_fontend sh -c "cd /var/www/html/FE && npm start & cd /var/www/html/NODE && npm start"

@@ -31,7 +31,6 @@ class UsersTableSeeder extends Seeder
             $block1->mineBlock();
             $blockChain = new Blockchain();
             $last_block = $blockChain->newBlock($block1);
-            echo $last_block;
             User::create([
                 'name'           => $nameAdmin,
                 'email'          => $gmailAdmin,

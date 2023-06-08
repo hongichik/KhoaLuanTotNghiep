@@ -7,6 +7,7 @@ import Layout from '@/layouts';
 export default function App({ Component, pageProps }: AppProps) {
 
   return (
+    // <Component {...pageProps} />
     <Provider store={store}>
       <Layout>
         <Component {...pageProps} />

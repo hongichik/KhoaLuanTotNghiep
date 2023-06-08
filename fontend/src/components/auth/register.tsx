@@ -67,7 +67,7 @@ const Register = () => {
 
             }
             user?.setUser(userData);
-            router.push('/about');
+            router.push('/');
         }
         else {
             setError({ ...error, ...result.errors });

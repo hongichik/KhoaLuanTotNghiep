@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Notification extends Model
 {
@@ -21,7 +22,7 @@ class Notification extends Model
         $perPage = $request['perPage'] ?? 15;
 
         $page = $request['page'] ?? 1;
-        $query = $this->orderBy('id', 'DESC')->paginate($perPage, ['*'], 'page', $page);
+        $query = $this->orderBy('id', 'DESC')->where('user_id',Auth::user()->id)->paginate($perPage, ['*'], 'page', $page);
 
         $notification = $query->items();
         $notificationStatus = $notification;

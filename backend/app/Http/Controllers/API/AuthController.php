@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Common\Block;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\API\auth\LoginRequest;
 use App\Http\Requests\API\auth\RegisterRequest;
+use App\Models\Blockchain;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
@@ -86,13 +88,19 @@ class AuthController extends Controller
                 $path = $request->file('avatar')->store('public/avatar/' . $date);
                 $url = substr(Storage::url($path), strlen('/storage/'));
 
+                $block1 = new Block("Bạn đã tạo tài khoản");
+                $block1->previousHash = 1;
+                $block1->mineBlock();
+                $blockChain = new Blockchain();
+                $last_block = $blockChain->newBlock($block1);
                 $user = User::create([
                     'name' => $request->name,
                     'email' => $request->email,
                     'password' => Hash::make($request->password),
                     'avatar'    => $url,
                     'phone'     => $request->phone,
-                    'address'   => $request->address
+                    'address'   => $request->address,
+                    'last_block'     =>  $last_block,
                 ]);
 
                 $tokenResult = $user->createToken('authToken')->plainTextToken;

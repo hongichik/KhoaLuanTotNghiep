@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Pay extends Model
 {
@@ -55,7 +56,7 @@ class Pay extends Model
         $status = $request['status'] ?? 0;
 
         $page = $request['page'] ?? 1;
-        $query = $this->where('status',$status)->orderBy('id', 'DESC')->paginate($perPage, ['*'], 'page', $page);
+        $query = $this->where('status',$status)->where('user_id',Auth::user()->id)->orderBy('id', 'DESC')->paginate($perPage, ['*'], 'page', $page);
 
         $pays = $query->items();
         foreach($pays as $pay)
